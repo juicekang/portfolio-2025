@@ -1,0 +1,89 @@
+// .font-eng{
+//     font-family: "Archivo Black", sans-serif;
+// }
+//main
+
+main{
+    > section{
+        height: 100vh;
+        .container{
+            height: 100%;
+        }
+        .section-title{
+            font-weight: 700;
+            font-size: 10rem;
+        }
+    }
+    .section{
+        &-main{
+            .container{
+                padding: 5rem;
+                display: flex;
+                flex-direction: column;
+            }
+            .main-title{
+                font-size: 12rem;
+                *{
+                    font-weight: 700;
+                }
+            }
+            .main-foot{
+                display: flex;
+                align-items: flex-end;
+                justify-content: space-between;
+                font-size: 2rem;
+                margin-top: auto;
+            }
+        }
+        &-about{
+            color: #fff;
+            background-color: black;
+            .container{
+                display: flex;
+                flex-direction: column;
+                padding: 8rem 5rem;
+            }
+            
+            .row-container{
+                flex-grow: 1;
+                display: flex;
+                align-items: center;
+            }
+            .about-row{
+                display: flex;
+                width: 100%;
+                .profile{
+                    font-size: 1.8rem;
+                    &-img{
+                        width: 25rem;
+                        height: 28rem;
+                        background-color: #ddd;
+                        margin-bottom: 2rem;
+                    }
+                }
+                .desc{
+                    display: flex;
+                    flex: 1;
+                    flex-wrap: wrap;
+                    margin-left: 10rem;
+                    dl{
+                        flex:1 0 50%;
+                        font-size: 1.6rem;
+                        dt{
+                            font-size: 1.8rem;
+                            font-weight: 600;
+                            margin-bottom: 1rem;
+                        }
+                        dd{
+                            color: #eee;
+                        }
+                    }
+                }
+            }
+        }
+        &-works{
+            
+        }
+    }
+}
+
