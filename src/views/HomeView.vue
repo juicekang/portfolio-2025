@@ -6,9 +6,10 @@
   <main>
     <section class="section-main">
       <div class="container">
-        <div class="main-title font-eng">
-          <h1>UI/UX DEVEL{}PE</h1>
-          <p>Portfolio</p>
+        <div class="main-title">
+          <!-- <h1>UI/UX DEVEL{}PE</h1>
+          <p>Portfolio</p> -->
+          <h1>Bienvenue!</h1>
         </div>
         <div class="main-foot">
           <dl>
@@ -60,7 +61,13 @@
     <section class="section-works">
       <div class="container">
         <h2 class="section-title" style="text-align: right;">{ Works }</h2>
+        <p class="page-description">지금까지 작업했던 프로젝트들을 소개합니다</p>
+        <Works />
       </div>
+      
     </section>
   </main>
 </template>
+<script>
+import Works from '@/views/Projects.vue'
+</script>
