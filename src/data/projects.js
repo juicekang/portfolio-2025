@@ -253,8 +253,8 @@ export const projects = [
     },
     {
       id: 5,
-      title: '유니클로 공식 온라인스토어 콘텐츠 제작',
-      description: '유니클로 공식 온라인스토어의 정기 콘텐츠를 퍼블리싱하였습니다',
+      title: '유니클로 공식 온라인스토어 콘텐츠',
+      description: '유니클로 공식 온라인스토어 정기 발행 콘텐츠',
       thumbnail: '/images/projects/project3-thumb.jpg',
       mainImage: '/images/projects/project3-main.jpg',
       period: '2023.04',
@@ -286,7 +286,7 @@ export const projects = [
     {
       id: 6,
       title: '미래엔 초등 디지털 교육 컨텐츠',
-      description: '미래엔의 초등 디지털 교육 컨텐츠 게임형 인터랙션과 학습 컨텐츠들을 개발하였습니다.',
+      description: '미래엔의 초등 디지털 교육 컨텐츠 게임형 인터랙션과 학습 컨텐츠',
       thumbnail: '/images/projects/project3-thumb.jpg',
       mainImage: '/images/projects/project3-main.jpg',
       period: '2020.08 - 2023.02',
@@ -333,7 +333,7 @@ export const projects = [
     {
       id: 7,
       title: '마이스 플랫폼 오투밋 O2MEET',
-      description: '웨비나, 종합 박람회를 간편하고 쉽게 제작할 수 있게 도와주는 마이스 플랫폼 O2MEET의 웹사이트를 제작하였습니다.',
+      description: '웨비나, 종합 박람회를 간편하게 제작할 수 있게 도와주는 마이스 플랫폼 O2MEET',
       thumbnail: '/images/projects/project3-thumb.jpg',
       mainImage: '/images/projects/project3-main.jpg',
       period: '2022.05',

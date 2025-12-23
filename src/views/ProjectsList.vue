@@ -1,12 +1,12 @@
 <template>
     <div class="projects-list-page">
-      <div class="container">
+      <div class="container-fluid">
         <!-- 헤더 -->
         <div class="page-header">
-          <button class="back-button" @click="goHome">
+          <!-- <button class="back-button" @click="goHome">
             <span class="arrow">←</span> 홈으로
-          </button>
-          <h1 class="page-title">All Projects</h1>
+          </button> -->
+          <h1 class="page-title">all projects</h1>
           <p class="page-description">진행했던 모든 프로젝트를 확인하세요</p>
         </div>
   
@@ -84,21 +84,14 @@
   }
   </script>
   
-  <style lang="scss" scoped>
+  <style lang="scss">
   .projects-list-page {
     min-height: 100vh;
-    background: linear-gradient(180deg, #f8f9fa 0%, #ffffff 100%);
     padding: 60px 0 100px;
   }
   
-  .container {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 0 20px;
-  }
-  
   .page-header {
-    margin-bottom: 60px;
+    margin: 60px 0;
   
     .back-button {
       display: inline-flex;
@@ -126,10 +119,11 @@
     }
   
     .page-title {
-      font-size: 48px;
+      font-size: 12rem;
       font-weight: 700;
-      color: #1a1a1a;
+      color: #000;
       margin-bottom: 16px;
+      letter-spacing:-2px;
     }
   
     .page-description {
