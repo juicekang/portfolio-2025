@@ -1,42 +1,38 @@
 <template>
   <div class="about-page">
-    <!-- Hero Section -->
-    <section class="hero-section">
+    <section class="hero-section main-border-bottom">
       <div class="hero-container">
         <div class="hero-label">About Me</div>
-        <h2 class="hero-title">
-          <!-- Crafting Digital<br />
-          Experiences with<br /> -->
-          precision & passion
-        </h2>
+        <h2 class="hero-title">precision & passion</h2>
       </div>
     </section>
 
-    <!-- Profile Section -->
-    <section class="profile-section">
+    <section class="profile-section main-border-bottom">
       <div class="profile-container">
         <div class="profile-grid">
-          <div class="profile-image">
-            <div class="image-placeholder">
-              <!-- 여기에 실제 프로필 이미지를 넣으세요 -->
-              <img src="/src/images/profile.jpg" alt="Profile" />
-            </div>
+          <div class="profile-image-wrap grid-border-right">
+            <div
+              class="image-placeholder profile-img-effect"
+              style="background-image: url('/src/images/profile.jpg')"
+            ></div>
           </div>
 
           <div class="profile-content">
-            <h2 class="profile-name">강민주</h2>
-            <p class="profile-title">Kang Minju / Web Publisher</p>
+            <div class="profile-header grid-border-bottom">
+              <h2 class="profile-name">강민주</h2>
+              <p class="profile-title">Kang Minju / Web Publisher</p>
+            </div>
 
             <div class="profile-info">
-              <div class="info-row">
+              <div class="info-row grid-border-bottom">
                 <span class="info-label">Email</span>
                 <a href="mailto:juicexoffee@gmail.com" class="info-value">juicexoffee@gmail.com</a>
               </div>
-              <div class="info-row">
+              <div class="info-row grid-border-bottom">
                 <span class="info-label">Birth</span>
                 <span class="info-value">1992.11</span>
               </div>
-              <div class="info-row">
+              <div class="info-row grid-border-bottom">
                 <span class="info-label">Location</span>
                 <span class="info-value">Seoul, Korea</span>
               </div>
@@ -50,11 +46,12 @@
       </div>
     </section>
 
-    <!-- Introduction Section -->
-    <section class="intro-section">
+    <section class="intro-section main-border-bottom">
       <div class="intro-container">
         <div class="intro-grid">
-          <div class="intro-label">Introduction</div>
+          <div class="intro-label-wrap grid-border-right">
+            <div class="intro-label section-heading-style">Introduction</div>
+          </div>
           <div class="intro-content">
             <p class="intro-text">
               5년차 웹퍼블리셔로서 사용자 경험을 최우선으로 생각하며 웹 표준과 접근성을 준수하는
@@ -71,65 +68,67 @@
       </div>
     </section>
 
-    <!-- Skills Section -->
-    <section class="skills-section">
+    <section class="skills-section main-border-bottom">
       <div class="skills-container">
         <h2 class="section-heading">Skills & Expertise</h2>
 
-        <div class="skills-grid">
-          <div class="skill-category">
-            <h3 class="category-title">Markup & Styling</h3>
-            <ul class="skill-list">
-              <li>HTML5, 시맨틱 마크업</li>
-              <li>CSS3, Sass/SCSS</li>
-              <li>반응형 & 적응형 웹 디자인</li>
-              <li>CSS Grid, Flexbox</li>
-              <li>Tailwind CSS</li>
-            </ul>
-          </div>
+        <div class="skills-grid-wrap grid-border-top grid-border-bottom">
+          <div class="skills-grid">
+            <div class="skill-category grid-border-right">
+              <h3 class="category-title">Markup & Styling</h3>
+              <ul class="skill-list">
+                <li>HTML5, 시맨틱 마크업</li>
+                <li>CSS3, Sass/SCSS</li>
+                <li>반응형 & 적응형 웹 디자인</li>
+                <li>CSS Grid, Flexbox</li>
+                <li>Tailwind CSS</li>
+              </ul>
+            </div>
 
-          <div class="skill-category">
-            <h3 class="category-title">JavaScript & Frameworks</h3>
-            <ul class="skill-list">
-              <li>JavaScript (ES6+)</li>
-              <li>Vue.js</li>
-              <li>jQuery</li>
-              <li>Vite</li>
-              <li>npm</li>
-            </ul>
-          </div>
+            <div class="skill-category">
+              <h3 class="category-title">JavaScript & Frameworks</h3>
+              <ul class="skill-list">
+                <li>JavaScript (ES6+)</li>
+                <li>Vue.js</li>
+                <li>jQuery</li>
+                <li>Vite</li>
+                <li>npm</li>
+              </ul>
+            </div>
 
-          <div class="skill-category">
-            <h3 class="category-title">Accessibility & Optimization</h3>
-            <ul class="skill-list">
-              <li>웹 접근성 준수 (WCAG 2.1)</li>
-              <li>크로스 브라우징 호환성</li>
-              <li>검색 엔진 최적화 (SEO)</li>
-              <li>웹 성능 최적화</li>
-            </ul>
-          </div>
+            <div class="skill-category grid-border-top grid-border-right">
+              <h3 class="category-title">Accessibility & Optimization</h3>
+              <ul class="skill-list">
+                <li>웹 접근성 준수 (WCAG 2.1)</li>
+                <li>크로스 브라우징 호환성</li>
+                <li>검색 엔진 최적화 (SEO)</li>
+                <li>웹 성능 최적화</li>
+              </ul>
+            </div>
 
-          <div class="skill-category">
-            <h3 class="category-title">Tools & Collaboration</h3>
-            <ul class="skill-list">
-              <li>Git, GitHub</li>
-              <li>Figma, Zeplin</li>
-              <li>VS Code</li>
-              <li>Jira, Notion</li>
-            </ul>
+            <div class="skill-category grid-border-top">
+              <h3 class="category-title">Tools & Collaboration</h3>
+              <ul class="skill-list">
+                <li>Git, GitHub</li>
+                <li>Figma, Zeplin</li>
+                <li>VS Code</li>
+                <li>Jira, Notion</li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Experience Section -->
-    <section class="experience-section">
+    <section class="experience-section main-border-bottom">
       <div class="experience-container">
         <h2 class="section-heading">Work Experience</h2>
 
-        <div class="timeline">
-          <div class="timeline-item">
-            <div class="timeline-date">2024.01 – 2025.11</div>
+        <div class="timeline grid-border-top">
+          <div class="timeline-item grid-border-bottom">
+            <div class="timeline-date-wrap grid-border-right">
+              <div class="timeline-date">2024.01 – 2025.11</div>
+            </div>
             <div class="timeline-content">
               <h3 class="timeline-title">천재교육</h3>
               <p class="timeline-company">UX개발팀</p>
@@ -142,8 +141,10 @@
             </div>
           </div>
 
-          <div class="timeline-item">
-            <div class="timeline-date">2020.08 – 2023.12</div>
+          <div class="timeline-item grid-border-bottom">
+            <div class="timeline-date-wrap grid-border-right">
+              <div class="timeline-date">2020.08 – 2023.12</div>
+            </div>
             <div class="timeline-content">
               <h3 class="timeline-title">스케치북</h3>
               <p class="timeline-company">UI/UX Development Team</p>
@@ -158,14 +159,13 @@
       </div>
     </section>
 
-    <!-- Education & Certificate Section -->
-    <section class="education-section">
+    <section class="education-section main-border-bottom">
       <div class="education-container">
         <div class="education-grid">
-          <div class="education-col">
+          <div class="education-col grid-border-right">
             <h2 class="section-heading">Education</h2>
-            <div class="education-list">
-              <div class="education-item">
+            <div class="education-list grid-border-top">
+              <div class="education-item grid-border-bottom">
                 <div class="education-year">2011 – 2016</div>
                 <h3 class="education-title">성신여자대학교</h3>
                 <p class="education-major">국어국문학과</p>
@@ -175,22 +175,11 @@
 
           <div class="education-col">
             <h2 class="section-heading">Certificates</h2>
-            <!-- <div class="certificate-list">
-              <div class="certificate-item">
-                <div class="certificate-year">2021</div>
-                <p class="certificate-name">웹접근성 전문가 자격증</p>
-              </div>
-              <div class="certificate-item">
-                <div class="certificate-year">2020</div>
-                <p class="certificate-name">정보처리기능사</p>
-              </div>
-            </div> -->
           </div>
         </div>
       </div>
     </section>
 
-    <!-- CTA Section -->
     <section class="cta-section">
       <div class="cta-container">
         <h2 class="cta-title">Let's Work Together</h2>
