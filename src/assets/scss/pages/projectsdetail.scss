@@ -381,7 +381,7 @@
 }
 
 // --- Responsive (Detail Specific) ---
-@media (max-width: $bp-tablet) {
+@include tablet {
   .content-section .split-layout {
     flex-direction: column;
     gap: 20px;
@@ -399,7 +399,7 @@
   }
 }
 
-@media (max-width: $bp-mobile) {
+@include mobile {
   .hero-section {
     height: 60vh;
   }

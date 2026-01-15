@@ -1,7 +1,7 @@
 <template>
   <div class="projects-list-page">
     <section class="hero-section">
-      <div class="hero-container">
+      <div class="hero-container" data-aos="fade-up">
         <div class="hero-label">ARCHIVE</div>
         <h2 class="hero-title">
           all projects <sup>({{ allProjects.length }})</sup>
@@ -9,7 +9,7 @@
       </div>
     </section>
 
-    <div class="container-fluid">
+    <div class="container-fluid" data-aos="fade-up" data-aos-delay="300">
       <div v-if="!allProjects || allProjects.length === 0" class="no-projects">
         <p>PROJECT DATA NOT FOUND.</p>
       </div>

@@ -109,7 +109,7 @@
       margin-bottom: 20px;
     }
     .project-idx {
-      font-family: $f-mono;
+      //font-family: $f-mono;
       font-size: 14px;
       font-weight: 700;
       color: #ccc;
@@ -164,7 +164,7 @@
     padding: 20px 0;
     border-bottom: 1px solid $c-line-strong;
     margin-top: 60px;
-    font-family: $f-mono;
+    //font-family: $f-mono;
 
     .stat-label {
       font-size: 12px;
@@ -192,7 +192,7 @@
     }
   }
 
-  @media (max-width: $bp-mobile) {
+  @include mobile {
     .projects-grid-wrap {
       border-left: none;
       border-top: 1px solid $c-line-strong;

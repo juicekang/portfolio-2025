@@ -1,13 +1,13 @@
 <template>
   <div class="about-page">
     <section class="hero-section main-border-bottom">
-      <div class="hero-container">
+      <div class="hero-container" data-aos="fade-up">
         <div class="hero-label">ABOUT ME</div>
         <h2 class="hero-title">precision & passion</h2>
       </div>
     </section>
 
-    <section class="profile-section main-border-bottom">
+    <section class="profile-section main-border-bottom" data-aos="fade-up">
       <div class="container-fluid">
         <div class="profile-grid">
           <div class="profile-image-wrap grid-border-right">
@@ -46,7 +46,7 @@
       </div>
     </section>
 
-    <section class="intro-section main-border-bottom">
+    <section class="intro-section main-border-bottom" data-aos="fade-up">
       <div class="container-fluid">
         <div class="intro-grid">
           <div class="intro-label-wrap grid-border-right">
@@ -68,7 +68,7 @@
       </div>
     </section>
 
-    <section class="skills-section main-border-bottom">
+    <section class="skills-section main-border-bottom" data-aos="fade-up">
       <div class="container-fluid">
         <h2 class="section-heading">Skills & Expertise</h2>
 
@@ -120,7 +120,7 @@
       </div>
     </section>
 
-    <section class="experience-section main-border-bottom">
+    <section class="experience-section main-border-bottom" data-aos="fade-up">
       <div class="container-fluid">
         <h2 class="section-heading">Work Experience</h2>
 
@@ -159,7 +159,7 @@
       </div>
     </section>
 
-    <section class="education-section main-border-bottom">
+    <section class="education-section main-border-bottom" data-aos="fade-up">
       <div class="container-fluid">
         <div class="education-grid">
           <div class="education-col grid-border-right">
@@ -168,7 +168,7 @@
               <div class="education-item grid-border-bottom">
                 <div class="education-year">2011 – 2016</div>
                 <h3 class="education-title">성신여자대학교</h3>
-                <p class="education-major">국어국문학과</p>
+                <p class="education-major">국어국문학 전공 / 컴퓨터소프트웨어학 부전공</p>
               </div>
             </div>
           </div>
@@ -180,7 +180,7 @@
       </div>
     </section>
 
-    <section class="cta-section">
+    <section class="cta-section" data-aos="fade-up">
       <div class="cta-container">
         <h2 class="cta-title">Let's Work Together</h2>
         <p class="cta-description">새로운 프로젝트나 협업 기회에 대해 언제든 연락 주세요</p>

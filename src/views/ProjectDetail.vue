@@ -5,7 +5,7 @@
     </div>
 
     <div v-else-if="project">
-      <section class="hero-section">
+      <section class="hero-section" data-aos="fade-up">
         <div class="bg-image" :style="{ backgroundImage: `url(${getMainImage(project)})` }"></div>
         <div class="overlay"></div>
 
@@ -22,7 +22,7 @@
         </div>
       </section>
 
-      <section class="meta-section">
+      <section class="meta-section" data-aos="fade-up">
         <div class="meta-container">
           <div class="meta-col">
             <span class="label">ROLE</span>
@@ -58,7 +58,11 @@
         </div>
       </section>
 
-      <section class="toolkit-section" v-if="project.techStack?.length || project.tags?.length">
+      <section
+        class="toolkit-section"
+        v-if="project.techStack?.length || project.tags?.length"
+        data-aos="fade-up"
+      >
         <div class="container-fluid">
           <div class="section-header">
             <h2 class="section-title">The Toolkit</h2>
@@ -72,7 +76,7 @@
         </div>
       </section>
 
-      <section class="content-section white-bg">
+      <section class="content-section white-bg" data-aos="fade-up">
         <div class="container-fluid">
           <div class="split-layout">
             <div class="left-col sticky-col">
@@ -95,7 +99,11 @@
         </div>
       </section>
 
-      <section class="contribution-section dark-bg" v-if="project.contributions?.length">
+      <section
+        class="contribution-section dark-bg"
+        v-if="project.contributions?.length"
+        data-aos="fade-up"
+      >
         <div class="container-fluid">
           <h2 class="section-title light">My Contributions</h2>
           <div class="contributions-list">
@@ -114,7 +122,7 @@
         </div>
       </section>
 
-      <section class="gallery-section" v-if="project.media?.length">
+      <section class="gallery-section" v-if="project.media?.length" data-aos="fade-up">
         <div class="container-fluid">
           <h2 class="section-title-s mb-60">Visuals</h2>
           <div class="gallery-grid">
@@ -136,7 +144,11 @@
         </div>
       </section>
 
-      <section class="challenge-section gray-bg" v-if="project.challenges?.length">
+      <section
+        class="challenge-section gray-bg"
+        v-if="project.challenges?.length"
+        data-aos="fade-up"
+      >
         <div class="container-fluid">
           <h2 class="section-title">Process & Challenges</h2>
 
@@ -161,7 +173,7 @@
         </div>
       </section>
 
-      <section class="results-section" v-if="project.achievements?.length">
+      <section class="results-section" v-if="project.achievements?.length" data-aos="fade-up">
         <div class="container-fluid">
           <div class="results-grid">
             <div v-for="(result, index) in project.achievements" :key="index" class="result-item">
@@ -172,7 +184,7 @@
         </div>
       </section>
 
-      <section class="next-nav">
+      <section class="next-nav" data-aos="fade-up">
         <button @click="goToNextProject" class="next-btn">
           <span class="sub">Next Project</span>
 
