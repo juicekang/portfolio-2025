@@ -4,7 +4,7 @@
       <div class="hero-container">
         <div class="hero-label">ARCHIVE</div>
         <h2 class="hero-title">
-          ALL PROJECTS <sup>({{ allProjects.length }})</sup>
+          all projects <sup>({{ allProjects.length }})</sup>
         </h2>
       </div>
     </section>

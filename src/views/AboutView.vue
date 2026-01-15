@@ -2,13 +2,13 @@
   <div class="about-page">
     <section class="hero-section main-border-bottom">
       <div class="hero-container">
-        <div class="hero-label">About Me</div>
+        <div class="hero-label">ABOUT ME</div>
         <h2 class="hero-title">precision & passion</h2>
       </div>
     </section>
 
     <section class="profile-section main-border-bottom">
-      <div class="profile-container">
+      <div class="container-fluid">
         <div class="profile-grid">
           <div class="profile-image-wrap grid-border-right">
             <div
@@ -47,7 +47,7 @@
     </section>
 
     <section class="intro-section main-border-bottom">
-      <div class="intro-container">
+      <div class="container-fluid">
         <div class="intro-grid">
           <div class="intro-label-wrap grid-border-right">
             <div class="intro-label section-heading-style">Introduction</div>
@@ -69,7 +69,7 @@
     </section>
 
     <section class="skills-section main-border-bottom">
-      <div class="skills-container">
+      <div class="container-fluid">
         <h2 class="section-heading">Skills & Expertise</h2>
 
         <div class="skills-grid-wrap grid-border-top grid-border-bottom">
@@ -121,7 +121,7 @@
     </section>
 
     <section class="experience-section main-border-bottom">
-      <div class="experience-container">
+      <div class="container-fluid">
         <h2 class="section-heading">Work Experience</h2>
 
         <div class="timeline grid-border-top">
@@ -160,7 +160,7 @@
     </section>
 
     <section class="education-section main-border-bottom">
-      <div class="education-container">
+      <div class="container-fluid">
         <div class="education-grid">
           <div class="education-col grid-border-right">
             <h2 class="section-heading">Education</h2>

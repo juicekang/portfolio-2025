@@ -1,107 +1,37 @@
-// --- Variables & Reset ---
-$color-bg: #ffffff;
-$color-text-primary: #000000;
-$color-text-secondary: #333333; // 기존보다 조금 더 진하게
-$color-text-tertiary: #666666; // 기존 #999 보다 진하게
-$color-line-strong: #111111; // 구조적인 라인 색상
-$color-line-weak: #e5e5e5; // 보조 라인 (필요시)
-$section-padding: 120px 0;
-$container-padding: 0 40px;
-$max-width: 1200px;
+// about.scss
+// @import 'variables';
 
-.about-page {
-  background: $color-bg;
-  color: $color-text-primary;
-  // font-family: 'Pretendard', sans-serif; // 웹폰트 적용 권장
-}
-
-// --- Utility Classes for Structure (The "Neundex" Look) ---
-.main-border-bottom {
-  border-bottom: 1px solid $color-line-strong;
-}
-.grid-border-top {
-  border-top: 1px solid $color-line-strong;
-}
-.grid-border-bottom {
-  border-bottom: 1px solid $color-line-strong;
-}
-.grid-border-right {
-  border-right: 1px solid $color-line-strong;
-}
-
-.section-heading-style {
-  font-size: 12px;
-  font-weight: 700;
-  //text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: $color-text-primary; // 진한 검정으로 변경
-}
-
-// --- Section Styles ---
-
-// Hero Section
+// --- Hero Section ---
+// layout.scss의 .text-hero-section을 사용하되 클래스명 매핑 필요
+// HTML에서 <section class="hero-section text-hero-section"> 형태로 사용 권장
 .hero-section {
-  padding: 180px 0 140px; // 상단 여백 증가로 시원한 느낌
-
-  .hero-container {
-    max-width: $max-width;
-    margin: 0 auto;
-    padding: $container-padding;
-  }
-
-  .hero-label {
-    @extend .section-heading-style;
-    margin-bottom: 40px;
-    color: $color-text-tertiary;
-  }
-
-  .hero-title {
-    font-size: clamp(50px, 9vw, 100px); // 폰트 사이즈 키움
-    font-weight: 800;
-    line-height: 1;
-    letter-spacing: -0.03em;
-    color: $color-text-primary;
-    //text-transform: uppercase; // 대문자로 강렬하게
-  }
+  @extend .text-hero-section;
+  padding: 180px 0 140px; // About 페이지 특화 패딩
 }
 
-// Profile Section
+// --- Profile Section ---
 .profile-section {
-  padding: 0; // 패딩 제거하고 그리드로 채움
+  padding: 0;
 
-  .profile-container {
-    max-width: $max-width;
-    margin: 0 auto;
-    border-left: 1px solid $color-line-strong; // 컨테이너 좌우 라인 추가
-    border-right: 1px solid $color-line-strong;
+  .container-fluid {
+    // border-left: 1px solid $c-line-strong;
+    // border-right: 1px solid $c-line-strong;
   }
 
   .profile-grid {
     display: grid;
     grid-template-columns: 400px 1fr;
-    align-items: stretch; // 높이 맞춤
+    align-items: stretch;
   }
 
-  .profile-image-wrap {
-    // padding: 40px; // 내부에 여백을 줄지 말지 결정
-  }
-
-  // [핵심] 프로필 이미지 흑백/컬러 인터랙션
   .profile-img-effect {
     width: 100%;
     height: 100%;
-    min-height: 500px; // 최소 높이 확보
+    min-height: 500px;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    //filter: grayscale(100%) contrast(1.1); // 기본 흑백 + 대비 증가
-    //transition: filter 0.5s ease;
-    border-bottom: 1px solid $color-line-strong; // 모바일 고려 하단 선
-
-    // &:hover {
-    //   filter: grayscale(0%) contrast(1); // 호버시 컬러
-    // }
-
+    border-bottom: 1px solid $c-line-strong;
     .image-fallback {
       color: #ccc;
       font-weight: 700;
@@ -112,50 +42,44 @@ $max-width: 1200px;
   .profile-content {
     display: flex;
     flex-direction: column;
-  }
-
-  .profile-header {
-    padding: 40px;
+    .profile-header {
+      padding: 40px;
+    }
   }
 
   .profile-name {
     font-size: 48px;
     font-weight: 800;
-    color: $color-text-primary;
+    color: $c-text-primary;
     margin-bottom: 10px;
     letter-spacing: -0.02em;
   }
 
   .profile-title {
     font-size: 18px;
-    color: $color-text-secondary;
+    color: $c-text-secondary;
     font-weight: 500;
   }
 
   .profile-info {
     display: flex;
     flex-direction: column;
-    flex-grow: 1; // 남은 영역 채우기
+    flex-grow: 1;
   }
 
   .info-row {
     display: grid;
     grid-template-columns: 140px 1fr;
     align-items: center;
-    padding: 25px 40px; // 패딩으로 높이감 조절
-
+    padding: 25px 40px;
     .info-label {
       @extend .section-heading-style;
-      color: $color-text-primary; // 라벨도 진하게
     }
-
     .info-value {
       font-size: 16px;
-      color: $color-text-secondary;
+      color: $c-text-secondary;
       font-weight: 500;
-      text-decoration: none;
       transition: opacity 0.3s ease;
-
       &:hover {
         opacity: 0.6;
       }
@@ -163,32 +87,23 @@ $max-width: 1200px;
   }
 }
 
-// Introduction Section
+// --- Introduction Section ---
 .intro-section {
-  padding: $section-padding;
-  background: $color-bg; // 배경색 제거 (순수 흰색/검정 대비)
-
+  padding: $p-section;
   .intro-container {
-    max-width: $max-width;
-    margin: 0 auto;
-    padding: $container-padding;
+    @extend .container;
   }
 
   .intro-grid {
     display: grid;
-    grid-template-columns: 250px 1fr; // 라벨 영역 넓힘
-    gap: 0; // 갭 제거하고 보더로 대체
-    border-top: 1px solid $color-line-strong;
+    grid-template-columns: 250px 1fr;
+    gap: 0;
+    border-top: 1px solid $c-line-strong;
   }
 
   .intro-label-wrap {
     padding-top: 40px;
   }
-
-  .intro-label {
-    // 스타일은 상단 유틸리티 클래스 사용
-  }
-
   .intro-content {
     padding: 40px 0 0 60px;
     max-width: 900px;
@@ -197,90 +112,68 @@ $max-width: 1200px;
   .intro-text {
     font-size: 18px;
     line-height: 1.8;
-    color: $color-text-secondary; // 색상 진하게
-    font-weight: 400; // 무게감 증가
+    color: $c-text-secondary;
+    font-weight: 400;
     margin-bottom: 30px;
-
     &:last-child {
       margin-bottom: 0;
     }
   }
 }
 
-// Skills Section
+// --- Skills Section ---
 .skills-section {
   padding: 120px 0;
-
   .skills-container {
-    max-width: $max-width;
-    margin: 0 auto;
-    padding: $container-padding;
+    @extend .container;
   }
-
   .section-heading {
     @extend .section-heading-style;
     margin-bottom: 40px;
   }
 
-  // 구조적인 그리드 레이아웃 적용
-  .skills-grid-wrap {
-    // border-top/bottom 적용됨
-  }
-
   .skills-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 0; // 갭 대신 보더 사용
+    gap: 0;
   }
 
   .skill-category {
-    padding: 50px 40px; // 내부 패딩 부여
-
+    padding: 50px 40px;
     .category-title {
       font-size: 22px;
       font-weight: 700;
-      color: $color-text-primary;
+      color: $c-text-primary;
       margin-bottom: 30px;
     }
-
     .skill-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-
       li {
         font-size: 16px;
         line-height: 2.2;
-        color: $color-text-secondary;
+        color: $c-text-secondary;
         padding-left: 20px;
         position: relative;
         font-weight: 500;
-
         &::before {
-          content: ''; // 대시 대신 네모 점이나 짧은 선
+          content: '';
           position: absolute;
           left: 0;
           top: 12px;
           width: 8px;
           height: 1px;
-          background-color: $color-line-strong;
+          background-color: $c-line-strong;
         }
       }
     }
   }
 }
 
-// Experience Section
+// --- Experience Section ---
 .experience-section {
   padding: 120px 0;
-  background: $color-bg; // 배경 제거
-
   .experience-container {
-    max-width: $max-width;
-    margin: 0 auto;
-    padding: $container-padding;
+    @extend .container;
   }
-
   .section-heading {
     @extend .section-heading-style;
     margin-bottom: 40px;
@@ -289,9 +182,8 @@ $max-width: 1200px;
   .timeline {
     display: flex;
     flex-direction: column;
-    gap: 0; // 보더로 대체
+    gap: 0;
   }
-
   .timeline-item {
     display: grid;
     grid-template-columns: 250px 1fr;
@@ -301,71 +193,59 @@ $max-width: 1200px;
   .timeline-date-wrap {
     padding: 40px 40px 40px 0;
   }
-
   .timeline-date {
     font-size: 16px;
     font-weight: 700;
-    color: $color-text-primary;
-    font-family: monospace; // 숫자 강조를 위한 모노 폰트 (선택사항)
+    color: $c-text-primary;
+    font-family: $f-mono;
   }
 
   .timeline-content {
     padding: 40px 0 40px 60px;
-
     .timeline-title {
       font-size: 26px;
       font-weight: 700;
-      color: $color-text-primary;
+      color: $c-text-primary;
       margin-bottom: 8px;
     }
-
     .timeline-company {
       font-size: 16px;
-      color: $color-text-tertiary;
+      color: $c-text-tertiary;
       margin-bottom: 24px;
       font-weight: 500;
     }
-
     .timeline-description {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-
       li {
         font-size: 16px;
         line-height: 1.8;
-        color: $color-text-secondary;
+        color: $c-text-secondary;
         padding-left: 20px;
         position: relative;
         margin-bottom: 8px;
         font-weight: 400;
-
         &::before {
           content: '•';
           position: absolute;
           left: 0;
-          color: $color-text-primary;
+          color: $c-text-primary;
         }
       }
     }
   }
 }
 
-// Education Section
+// --- Education Section ---
 .education-section {
   padding: 120px 0;
-
   .education-container {
-    max-width: $max-width;
-    margin: 0 auto;
-    padding: $container-padding;
+    @extend .container;
   }
 
   .education-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 0; // 보더로 대체
-    border-bottom: 1px solid $color-line-strong;
+    gap: 0;
+    border-bottom: 1px solid $c-line-strong;
   }
 
   .education-col {
@@ -374,59 +254,46 @@ $max-width: 1200px;
       padding-left: 40px;
       padding-right: 0;
     }
-
     .section-heading {
       @extend .section-heading-style;
       margin-bottom: 30px;
     }
   }
 
-  .education-list,
-  .certificate-list {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-  }
-
   .education-item,
   .certificate-item {
     padding: 20px 0;
-
     .education-year,
     .certificate-year {
       font-size: 14px;
       font-weight: 600;
-      color: $color-text-tertiary;
+      color: $c-text-tertiary;
       margin-bottom: 8px;
-      font-family: monospace;
+      font-family: $f-mono;
     }
-
     .education-title {
       font-size: 22px;
       font-weight: 700;
-      color: $color-text-primary;
+      color: $c-text-primary;
       margin-bottom: 6px;
     }
-
     .education-major,
     .certificate-name {
       font-size: 16px;
-      color: $color-text-secondary;
+      color: $c-text-secondary;
       font-weight: 500;
     }
   }
 }
 
-// CTA Section
+// --- CTA Section ---
 .cta-section {
   padding: 160px 0;
-  background: #000000; // 완전한 블랙
-  color: #ffffff;
-
+  background: #000;
+  color: #fff;
   .cta-container {
+    @extend .container;
     max-width: 800px;
-    margin: 0 auto;
-    padding: $container-padding;
     text-align: center;
   }
 
@@ -434,16 +301,14 @@ $max-width: 1200px;
     font-size: clamp(40px, 5vw, 60px);
     font-weight: 800;
     margin-bottom: 24px;
-    text-transform: uppercase;
+    //text-transform: uppercase;
     letter-spacing: -0.02em;
   }
-
   .cta-description {
     font-size: 18px;
     color: #999;
     margin-bottom: 60px;
   }
-
   .cta-links {
     display: flex;
     gap: 20px;
@@ -454,39 +319,32 @@ $max-width: 1200px;
     padding: 20px 50px;
     font-size: 14px;
     font-weight: 700;
-    text-transform: uppercase;
-    text-decoration: none;
+    //text-transform: uppercase;
+    border-radius: 0;
     transition: all 0.3s ease;
-    border-radius: 0; // 사각형 버튼
-
     &.primary {
-      background: #ffffff;
-      color: #000000;
+      background: #fff;
+      color: #000;
       border: 1px solid #fff;
-
       &:hover {
         background: #000;
         color: #fff;
       }
     }
-
     &.secondary {
       background: transparent;
-      color: #ffffff;
-      border: 1px solid #ffffff;
-
+      color: #fff;
+      border: 1px solid #fff;
       &:hover {
-        background: #ffffff;
-        color: #000000;
+        background: #fff;
+        color: #000;
       }
     }
   }
 }
 
-// --- Responsive Adjustments ---
-/* --- Responsive Adjustments (Mobile Fix) --- */
-@media (max-width: 1024px) {
-  // 1. 전체 여백 조정
+// --- Responsive (About Specific) ---
+@media (max-width: $bp-tablet) {
   .hero-section,
   .skills-section,
   .experience-section,
@@ -494,121 +352,84 @@ $max-width: 1200px;
   .cta-section,
   .profile-section,
   .intro-section {
-    padding: 60px 0; // 상하 여백 줄임
+    padding: 60px 0;
   }
 
-  .hero-container,
-  .profile-container,
-  .intro-container,
-  .skills-container,
-  .experience-container,
-  .education-container,
-  .cta-container {
-    padding: 0 20px; // 좌우 패딩 축소
-  }
-
-  // 2. 프로필 섹션: 위아래로 배치
+  // Profile
   .profile-grid {
-    grid-template-columns: 1fr !important; // 강제로 1열 만들기
-
+    grid-template-columns: 1fr !important;
     .profile-image-wrap {
       border-right: none;
-      border-bottom: 1px solid #111;
-
-      .profile-img-effect {
-        min-height: 400px; // 모바일에서 이미지 높이 적당히
-      }
+      border-bottom: 1px solid $c-line-strong;
+    }
+    .profile-img-effect {
+      min-height: 400px;
     }
   }
-
   .profile-content {
-    // 모바일에서도 정보가 잘 보이게 패딩 조정
     .profile-header {
       padding: 30px 0;
     }
     .info-row {
       grid-template-columns: 100px 1fr;
-      padding: 20px 0; // 좌우 패딩 제거
+      padding: 20px 0;
     }
   }
 
-  // 3. 인트로 섹션 (여기가 제일 많이 깨졌던 부분)
+  // Intro
   .intro-grid {
-    display: flex !important; // 그리드 대신 flex로 변경
+    display: flex !important;
     flex-direction: column;
-    border-top: 1px solid #111;
-
+    border-top: 1px solid $c-line-strong;
     .intro-label-wrap {
       width: 100%;
       border-right: none;
-      border-bottom: 1px solid #111;
+      border-bottom: 1px solid $c-line-strong;
       padding: 20px 0;
     }
-
     .intro-content {
-      padding: 30px 0 0 0 !important; // [중요] 왼쪽 여백(60px) 제거
+      padding: 30px 0 0 0 !important;
       max-width: 100%;
     }
   }
 
-  // 4. 스킬 섹션
-  .skills-grid {
-    grid-template-columns: 1fr !important; // 1열로 변경
-
-    .skill-category {
-      border-right: none !important; // 세로선 제거
-      border-bottom: 1px solid #111; // 가로선 추가
-      padding: 30px 0; // 좌우 패딩 제거
-
-      &:last-child {
-        border-bottom: none;
-      }
-    }
-  }
-
-  // 5. 경력 섹션
-  .timeline-item {
-    display: flex !important;
-    flex-direction: column;
-
-    .timeline-date-wrap {
-      border-right: none;
-      padding: 20px 0 10px 0;
-      border-bottom: 1px solid #eee; // 날짜와 내용 구분선
-      margin-bottom: 20px;
-    }
-
-    .timeline-content {
-      padding: 0 0 40px 0 !important; // 왼쪽 여백 제거
-    }
-  }
-
-  // 6. 학력 섹션
+  // Skills & Education (Grid reset)
+  .skills-grid,
   .education-grid {
     grid-template-columns: 1fr !important;
-    border-bottom: none; // 모바일에서는 맨 아래 선 제거 (깔끔하게)
   }
-
+  .skill-category {
+    border-right: none !important;
+    border-bottom: 1px solid $c-line-strong;
+    padding: 30px 0;
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+  .education-grid {
+    border-bottom: none;
+  }
   .education-col {
     padding: 30px 0 !important;
     border-right: none !important;
-    border-bottom: 1px solid #111;
-
+    border-bottom: 1px solid $c-line-strong;
     &:last-child {
-      border-bottom: 1px solid #111;
+      border-bottom: 1px solid $c-line-strong;
     }
   }
 
-  // 7. 폰트 및 텍스트 줄바꿈 방지 (한글 깨짐 해결)
-  body {
-    word-break: keep-all; // 단어 단위로 줄바꿈
-  }
-
-  .hero-title {
-    font-size: 14vw; // 모바일에 맞춰 타이틀 크기 조정
-  }
-
-  .profile-name {
-    font-size: 32px;
+  // Experience
+  .timeline-item {
+    display: flex !important;
+    flex-direction: column;
+    .timeline-date-wrap {
+      border-right: none;
+      padding: 20px 0 10px 0;
+      border-bottom: 1px solid $c-line-weak;
+      margin-bottom: 20px;
+    }
+    .timeline-content {
+      padding: 0 0 40px 0 !important;
+    }
   }
 }

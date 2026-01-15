@@ -79,10 +79,8 @@ main {
     font-size: 10rem;
   }
   &-main {
-    .container-fluid {
-      display: flex;
-      flex-direction: column;
-    }
+    padding-left: 10px;
+    padding-right: 10px;
 
     .main-title {
       .main-logo-img {
@@ -109,5 +107,169 @@ main {
   // }
   &-works {
     padding-top: 12rem;
+  }
+}
+
+// --- Common Utilities ---
+.container {
+  max-width: $max-width;
+  margin: 0 auto;
+  padding: 0 $p-container;
+  @media (max-width: $bp-mobile) {
+    padding: 0 $p-container-m;
+  }
+}
+
+.container-fluid {
+  max-width: $max-width-wide;
+  margin: 0 auto;
+  padding: 0 $p-container;
+  @media (max-width: $bp-mobile) {
+    padding: 0 $p-container-m;
+  }
+}
+
+// Backgrounds
+.white-bg {
+  background: $c-bg;
+}
+.gray-bg {
+  background: $c-bg-gray;
+}
+.dark-bg {
+  background: $c-bg-dark;
+  color: $c-text-light;
+}
+
+// Margins
+.mb-60 {
+  margin-bottom: 60px;
+}
+
+// Neundex Borders (공통 사용)
+.border-bottom {
+  border-bottom: 1px solid $c-line-strong;
+}
+.border-top {
+  border-top: 1px solid $c-line-strong;
+}
+.border-right {
+  border-right: 1px solid $c-line-strong;
+}
+.main-border-bottom {
+  border-bottom: 1px solid $c-line-strong;
+}
+.grid-border-top {
+  border-top: 1px solid $c-line-strong;
+}
+.grid-border-bottom {
+  border-bottom: 1px solid $c-line-strong;
+}
+.grid-border-right {
+  border-right: 1px solid $c-line-strong;
+}
+
+// --- Typography ---
+.section-heading-style {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: $c-text-primary;
+}
+
+.section-title {
+  font-size: 32px;
+  font-weight: 800;
+  //text-transform: uppercase;
+  margin-bottom: 40px;
+  letter-spacing: -0.02em;
+  &.light {
+    color: $c-text-light;
+  }
+}
+
+.section-title-s {
+  font-size: 24px;
+  font-weight: 800;
+  //text-transform: uppercase;
+  border-top: 4px solid $c-text-primary;
+  padding-top: 20px;
+  display: inline-block;
+}
+
+// --- Common Component: Loading Screen ---
+.loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: $c-bg;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .loader-bar {
+    width: 40px;
+    height: 4px;
+    background: $c-text-primary;
+    animation: pulse 1s infinite;
+  }
+}
+@keyframes pulse {
+  0%,
+  100% {
+    width: 40px;
+  }
+  50% {
+    width: 80px;
+  }
+}
+
+// --- Common Component: Text Hero (About & Project List) ---
+// Detail 페이지의 Hero는 스타일이 달라서 별도 파일에 둡니다.
+.text-hero-section {
+  padding: 160px 0 100px;
+  border-bottom: 1px solid $c-line-strong;
+
+  .hero-container {
+    max-width: $max-width; // List 페이지는 1400px이므로 개별 오버라이딩 가능
+    margin: 0 auto;
+    padding: 0 $p-container;
+    @media (max-width: $bp-mobile) {
+      padding: 0 $p-container-m;
+    }
+  }
+
+  .hero-label {
+    @extend .section-heading-style;
+    margin-bottom: 40px;
+    color: $c-text-tertiary;
+    //text-transform: uppercase;
+  }
+
+  .hero-title {
+    font-size: clamp(40px, 8vw, 100px); // clamp 조정
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -0.03em;
+    color: $c-text-primary;
+    //text-transform: uppercase;
+
+    sup {
+      font-size: 0.4em;
+      font-weight: 400;
+      vertical-align: top;
+      margin-left: 10px;
+      //color: $c-text-sub;
+    }
+  }
+
+  @media (max-width: $bp-mobile) {
+    padding: 120px 0 60px;
+    .hero-title {
+      font-size: 14vw;
+    }
   }
 }

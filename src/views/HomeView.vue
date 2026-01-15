@@ -1,34 +1,31 @@
 <template>
   <main>
     <section class="section-main">
-      <div class="container-fluid">
-        <div class="main-title">
-          <img src="/src/images/minjukang.svg" alt="" class="main-logo-img" />
-          <h2 class="sr-only">minju kang portfolio</h2>
-        </div>
-        <div class="main-info">
-          <div class="grid grid-cols-5 gap-10">
-            <div class="col-span-3 text-right h-full">
-              <div class="typewriter-text-wrap flex flex-col h-full">
-                <span class="typewriter-text">{{ displayedText }}</span>
-                <div class="mt-auto">of</div>
-              </div>
+      <div class="main-title">
+        <img src="/src/images/minjukang.svg" alt="" class="main-logo-img" />
+        <h2 class="sr-only">minju kang portfolio</h2>
+      </div>
+      <div class="main-info">
+        <div class="grid grid-cols-5 gap-10">
+          <div class="col-span-3 text-right h-full">
+            <div class="typewriter-text-wrap flex flex-col h-full">
+              <span class="typewriter-text">{{ displayedText }}</span>
+              <div class="mt-auto">of</div>
             </div>
-            <div class="col-span-2">
-              <p>my name is Minju Kang</p>
-              <p>ui/ux developer</p>
-              <p>seoul</p>
-            </div>
+          </div>
+          <div class="col-span-2">
+            <p>my name is Minju Kang</p>
+            <p>ui/ux developer</p>
+            <p>seoul</p>
           </div>
         </div>
       </div>
     </section>
-  </main>
-  <section class="section-works container-fluid">
-    <div class="container-fluid">
+    <section class="section-works container-fluid">
       <Works />
-    </div>
-  </section>
+    </section>
+  </main>
+
   <!-- <section class="section-works">
       <div class="container-fluid">
         <h2 class="section-title" style="text-align: right;">{ Works }</h2>

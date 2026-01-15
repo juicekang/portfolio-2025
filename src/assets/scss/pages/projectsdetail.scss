@@ -1,567 +1,417 @@
-.project-detail-wrapper {
-  min-height: 100vh;
-  background: #ffffff;
-  color: #000000;
-}
+// projectsdetail.scss
+//@import 'variables';
 
-// Loading
-.loading {
-  position: fixed;
-  top: 0;
-  left: 0;
+.project-detail-editorial {
   width: 100%;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #ffffff;
+  // --- Detail Specific Hero (Image BG) ---
 
-  .loading-bar {
-    width: 200px;
-    height: 2px;
-    background: #f0f0f0;
+  .hero-section {
     position: relative;
+    height: 75vh;
+    min-height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    color: $c-text-light;
     overflow: hidden;
 
-    &::after {
-      content: '';
+    .bg-image {
       position: absolute;
       top: 0;
       left: 0;
-      width: 50%;
-      height: 100%;
-      background: #000000;
-      animation: loading 1.2s ease-in-out infinite;
-    }
-  }
-}
-
-@keyframes loading {
-  0% {
-    transform: translateX(-100%);
-  }
-  100% {
-    transform: translateX(300%);
-  }
-}
-
-// Hero Section
-.hero-section {
-  padding: 160px 0 100px;
-
-  .hero-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 40px;
-  }
-
-  .hero-number {
-    font-size: 14px;
-    font-weight: 500;
-    letter-spacing: 0.2em;
-    color: #999999;
-    margin-bottom: 40px;
-  }
-
-  .hero-title {
-    font-size: clamp(48px, 10vw, 120px);
-    font-weight: 700;
-    line-height: 0.95;
-    letter-spacing: -0.03em;
-    margin-bottom: 40px;
-    color: #000000;
-  }
-
-  .hero-description {
-    font-size: 20px;
-    line-height: 1.6;
-    color: #666666;
-    max-width: 600px;
-    font-weight: 300;
-  }
-}
-
-// Info Section
-.info-section {
-  border-top: 1px solid #e5e5e5;
-  border-bottom: 1px solid #e5e5e5;
-  padding: 60px 0;
-
-  .info-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 40px;
-  }
-
-  .info-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 40px;
-  }
-
-  .info-item {
-    .info-label {
-      display: block;
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: #999999;
-      margin-bottom: 12px;
-    }
-
-    .info-value,
-    .info-tags {
-      font-size: 15px;
-      line-height: 1.6;
-      color: #000000;
-      font-weight: 400;
-    }
-
-    .info-tags {
-      span {
-        color: #000000;
-      }
-    }
-  }
-}
-
-// Image Section
-.image-section {
-  padding: 100px 0;
-
-  .image-container {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 0 40px;
-
-    img {
       width: 100%;
-      height: auto;
-      display: block;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      z-index: 0;
+      filter: brightness(0.6);
     }
-  }
-}
 
-// Text Section
-.section-heading {
-  font-size: 20px;
-  font-weight: 700;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: #000;
-  margin-bottom: 35px;
-}
-.text-section {
-  padding: 100px 0;
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      padding: 60px 40px;
+      max-width: $max-width;
+      width: 100%;
+      margin: 0 auto;
 
-  .text-container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 0 40px;
-  }
-
-  .section-text {
-    font-size: 16px;
-    line-height: 1.6;
-    color: #333333;
-    font-weight: 300;
-  }
-}
-
-// List Section
-.list-section {
-  padding: 100px 0;
-
-  .list-container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 0 40px;
-  }
-
-  .feature-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-
-    li {
-      display: flex;
-      gap: 24px;
-      padding: 20px 0;
-      border-bottom: 1px solid #f0f0f0;
-
-      &:first-child {
-        border-top: 1px solid #f0f0f0;
+      .hero-top {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+        .back-link {
+          background: rgba(255, 255, 255, 0.2);
+          border: 1px solid rgba(255, 255, 255, 0.4);
+          color: #fff;
+          padding: 8px 20px;
+          border-radius: 30px;
+          cursor: pointer;
+          backdrop-filter: blur(4px);
+          &:hover {
+            background: #fff;
+            color: #000;
+          }
+        }
       }
 
-      .list-number {
-        font-size: 14px;
-        font-weight: 500;
-        color: #999999;
-        min-width: 30px;
+      .project-title {
+        font-size: clamp(48px, 8vw, 100px);
+        font-weight: 800;
+        line-height: 1;
+        margin-bottom: 20px;
       }
-
-      .list-text {
-        font-size: 16px;
+      .project-summary {
+        max-width: 600px;
+        font-size: 18px;
         line-height: 1.6;
-        color: #333333;
-        flex: 1;
+        opacity: 0.9;
       }
     }
   }
 }
 
-// Contributions Section
-.contributions-section {
-  padding: 100px 0;
-  background: #fafafa;
-
-  .contributions-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 40px;
+// --- Meta Info ---
+.meta-section {
+  background: $c-bg-dark;
+  color: $c-text-light;
+  padding: 40px 0;
+  border-bottom: 1px solid #333;
+  .meta-container {
+    @extend .container;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
   }
-
-  .contributions-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 40px;
-  }
-
-  .contribution-card {
-    .contribution-title {
-      font-size: 18px;
-      font-weight: 600;
-      color: #000000;
-      margin-bottom: 12px;
-    }
-
-    .contribution-text {
-      font-size: 15px;
-      line-height: 1.7;
-      color: #666666;
-      font-weight: 300;
-    }
-  }
-}
-
-// Achievements Section
-.achievements-section {
-  padding: 100px 0;
-
-  .achievements-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 40px;
-  }
-
-  .achievements-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 60px;
-  }
-
-  .achievement-item {
-    .achievement-value {
-      font-size: 64px;
-      font-weight: 700;
-      color: #000000;
-      line-height: 1;
-      margin-bottom: 12px;
-    }
-
-    .achievement-label {
+  .meta-col {
+    display: flex;
+    flex-direction: column;
+    .label {
       font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: #999999;
+      color: #888;
+      margin-bottom: 8px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+    }
+    .value {
+      font-size: 15px;
+      font-weight: 500;
+    }
+    &.links {
+      flex-direction: row;
+      gap: 10px;
+      align-items: center;
+      .link-btn {
+        padding: 8px 16px;
+        background: #fff;
+        color: #000;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 13px;
+        &:hover {
+          opacity: 0.8;
+        }
+      }
     }
   }
 }
 
-// Challenges Section
-.challenges-section {
-  padding: 100px 0;
-  background: #fafafa;
-
-  .challenges-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 40px;
+// --- Tech Stacks (Toolkit) ---
+.toolkit-section {
+  padding: 80px 0;
+  border-bottom: 1px solid $c-line-weak;
+  .section-header {
+    margin-bottom: 40px;
   }
+  .section-desc {
+    font-size: 16px;
+    color: $c-text-tertiary;
+    margin-top: 10px;
+  }
+  .tech-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    .tech-badge {
+      font-size: 14px;
+      font-weight: 600;
+      padding: 10px 20px;
+      border: 1px solid #000;
+      background: #fff;
+      color: #000;
+      border-radius: 0;
+      transition: all 0.3s;
+      &:hover {
+        background: #000;
+        color: #fff;
+      }
+    }
+  }
+}
 
-  .challenges-list {
+// --- Content: Overview & Features ---
+.content-section {
+  padding: 100px 0;
+  .split-layout {
+    display: flex;
+    gap: 60px;
+    margin-bottom: 100px;
+    .left-col {
+      width: 30%;
+    }
+    .right-col {
+      width: 70%;
+      .body-text {
+        font-size: 18px;
+        line-height: 1.8;
+        color: $c-text-secondary;
+        white-space: pre-line;
+      }
+    }
+  }
+  .features-wrapper {
+    .sub-heading {
+      font-size: 24px;
+      font-weight: 800;
+      margin-bottom: 40px;
+    }
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 40px;
+      .feature-card {
+        border-top: 1px solid #000;
+        padding-top: 20px;
+        .f-num {
+          display: block;
+          font-size: 32px;
+          font-weight: 800;
+          color: #ddd;
+          margin-bottom: 10px;
+        }
+        .f-text {
+          font-size: 16px;
+          line-height: 1.6;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+}
+
+// --- Contributions ---
+.contribution-section {
+  padding: 100px 0;
+  .contributions-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    border-top: 1px solid #333;
+  }
+  .contribution-row {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 40px;
+    padding: 40px 0;
+    border-bottom: 1px solid #333;
+    .c-header {
+      display: flex;
+      gap: 15px;
+      .check-icon {
+        color: #51cf66;
+        font-weight: 700;
+      }
+      .c-title {
+        font-size: 18px;
+        font-weight: 700;
+        color: #fff;
+      }
+    }
+    .c-desc {
+      color: #ccc;
+      line-height: 1.6;
+      font-size: 1.6rem;
+    }
+  }
+}
+
+// --- Gallery ---
+.gallery-section {
+  padding: 100px 0;
+  .gallery-grid {
     display: flex;
     flex-direction: column;
     gap: 80px;
   }
-
-  .challenge-item {
-    .challenge-title {
-      font-size: 18px;
-      font-weight: 600;
-      color: #000000;
-      margin-bottom: 32px;
+  .gallery-item {
+    width: 100%;
+    img,
+    video {
+      width: 100%;
+      height: auto;
+      display: block;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
     }
-
-    .challenge-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 60px;
-    }
-
-    .challenge-col {
-      .challenge-label {
-        font-size: 11px;
-        font-weight: 600;
-        letter-spacing: 0.15em;
-        text-transform: uppercase;
-        margin-bottom: 16px;
-      }
-
-      .challenge-text {
-        font-size: 15px;
-        line-height: 1.7;
-        color: #666666;
-        font-weight: 300;
+    .caption {
+      margin-top: 15px;
+      text-align: right;
+      .img-num {
+        font-size: 12px;
+        color: #999;
+        font-weight: 700;
       }
     }
   }
 }
 
-// Links Section
-.links-section {
+// --- Challenges ---
+.challenge-section {
   padding: 100px 0;
-
-  .links-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 40px;
+  .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
   }
+  .process-card {
+    background: #fff;
+    padding: 40px;
+    border: 1px solid $c-line-weak;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 30px;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 20px;
+      .card-num {
+        font-size: 12px;
+        color: #999;
+        font-weight: 700;
+      }
+      .card-title {
+        font-size: 18px;
+        font-weight: 700;
+      }
+    }
+    .card-body {
+      .badge {
+        display: inline-block;
+        font-size: 10px;
+        padding: 2px 6px;
+        margin-bottom: 8px;
+        font-weight: 700;
+        &.red {
+          color: #e03131;
+          border: 1px solid #e03131;
+        }
+        &.green {
+          color: #2f9e44;
+          border: 1px solid #2f9e44;
+        }
+      }
+      p {
+        font-size: 15px;
+        line-height: 1.6;
+        color: #444;
+        margin-bottom: 20px;
+      }
+    }
+  }
+}
 
-  .links-grid {
+// --- Results ---
+.results-section {
+  padding: 60px 0;
+  border-top: 1px solid $c-line-weak;
+  .results-grid {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 40px;
+    .result-item {
+      text-align: center;
+      .r-value {
+        display: block;
+        font-size: 48px;
+        font-weight: 800;
+        color: #000;
+        margin-bottom: 5px;
+      }
+      .r-label {
+        font-size: 14px;
+        color: #666;
+        //text-transform: uppercase;
+        letter-spacing: 0.1em;
+      }
+    }
+  }
+}
+
+// --- Next Nav ---
+.next-nav {
+  border-top: 1px solid #000;
+  .next-btn {
+    width: 100%;
+    padding: 120px 0;
+    background: #fff;
+    border: none;
+    cursor: pointer;
     display: flex;
     flex-direction: column;
-    gap: 2px;
-    background: #000000;
-    border: 2px solid #000000;
-  }
-
-  .link-item {
-    display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 24px 32px;
-    background: #ffffff;
-    color: #000000;
-    text-decoration: none;
-    font-size: 16px;
-    font-weight: 500;
-    transition: all 0.3s ease;
-
-    .link-arrow {
-      font-size: 20px;
-      transition: transform 0.3s ease;
-    }
-
+    gap: 15px;
+    transition: background 0.3s;
     &:hover {
-      background: #000000;
-      color: #ffffff;
-
-      .link-arrow {
-        transform: translateX(8px);
-      }
+      background: #f0f0f0;
+    }
+    .sub {
+      font-size: 14px;
+      color: #999;
+      font-weight: 700;
+      //text-transform: uppercase;
+    }
+    .main {
+      font-size: 40px;
+      font-weight: 800;
+      color: #000;
+    }
+    .arrow {
+      font-size: 40px;
     }
   }
 }
 
-// Navigation Section
-.navigation-section {
-  border-top: 1px solid #e5e5e5;
-  padding: 60px 0;
-
-  .navigation-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 40px;
-    display: flex;
-    justify-content: space-between;
+// --- Responsive (Detail Specific) ---
+@media (max-width: $bp-tablet) {
+  .content-section .split-layout {
+    flex-direction: column;
     gap: 20px;
   }
-
-  .nav-button {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 0;
-    background: none;
-    border: none;
-    font-size: 14px;
-    font-weight: 500;
-    color: #000000;
-    cursor: pointer;
-    transition: opacity 0.3s ease;
-
-    .nav-arrow {
-      font-size: 18px;
-      transition: transform 0.3s ease;
-    }
-
-    &:hover {
-      opacity: 0.5;
-
-      .nav-arrow {
-        &:first-child {
-          transform: translateX(-4px);
-        }
-        &:last-child {
-          transform: translateX(4px);
-        }
-      }
-    }
+  .content-section .split-layout .left-col,
+  .right-col {
+    width: 100%;
   }
-}
-
-// Not Found
-.not-found {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  .not-found-content {
-    text-align: center;
-    padding: 40px;
-
-    h2 {
-      font-size: 120px;
-      font-weight: 700;
-      color: #000000;
-      margin-bottom: 20px;
-    }
-
-    p {
-      font-size: 18px;
-      color: #666666;
-      margin-bottom: 40px;
-    }
-
-    .back-button {
-      padding: 16px 32px;
-      background: #000000;
-      color: #ffffff;
-      border: none;
-      font-size: 14px;
-      font-weight: 500;
-      cursor: pointer;
-      transition: opacity 0.3s ease;
-
-      &:hover {
-        opacity: 0.8;
-      }
-    }
-  }
-}
-
-// Responsive
-@media (max-width: 1024px) {
-  .hero-section {
-    padding: 120px 0 80px;
-
-    .hero-container {
-      padding: 0 30px;
-    }
-  }
-
-  .info-container,
-  .image-container,
-  .text-container,
-  .list-container,
-  .contributions-container,
-  .achievements-container,
-  .challenges-container,
-  .links-container,
-  .navigation-container {
-    padding: 0 30px;
-  }
-
-  .challenge-grid {
-    grid-template-columns: 1fr !important;
-    gap: 40px !important;
-  }
-}
-
-@media (max-width: 768px) {
-  .hero-section {
-    padding: 100px 0 60px;
-
-    .hero-container {
-      padding: 0 20px;
-    }
-
-    .hero-number {
-      margin-bottom: 24px;
-    }
-
-    .hero-title {
-      margin-bottom: 24px;
-    }
-
-    .hero-description {
-      font-size: 16px;
-    }
-  }
-
-  .info-section {
-    padding: 40px 0;
-
-    .info-grid {
-      grid-template-columns: 1fr;
-      gap: 24px;
-    }
-  }
-
-  .image-section,
-  .text-section,
-  .list-section,
-  .contributions-section,
-  .achievements-section,
-  .challenges-section,
-  .links-section {
-    padding: 60px 0;
-  }
-
-  .info-container,
-  .image-container,
-  .text-container,
-  .list-container,
-  .contributions-container,
-  .achievements-container,
-  .challenges-container,
-  .links-container,
-  .navigation-container {
-    padding: 0 20px;
-  }
-
-  .contributions-grid,
-  .achievements-grid {
+  .challenge-section .cards-grid {
     grid-template-columns: 1fr;
-    gap: 32px;
   }
+  .contribution-section .contribution-row {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+}
 
-  .navigation-container {
+@media (max-width: $bp-mobile) {
+  .hero-section {
+    height: 60vh;
+  }
+  .meta-container {
     flex-direction: column;
-
-    .nav-button {
-      justify-content: space-between;
-      width: 100%;
-      padding: 16px 0;
-      border-bottom: 1px solid #e5e5e5;
-    }
+    gap: 20px;
   }
-
-  .achievement-item .achievement-value {
-    font-size: 48px;
+  .features-wrapper .features-grid {
+    grid-template-columns: 1fr;
+  }
+  .results-section .results-grid {
+    flex-direction: column;
+    gap: 30px;
   }
 }
