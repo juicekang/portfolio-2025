@@ -175,7 +175,11 @@
       <section class="next-nav">
         <button @click="goToNextProject" class="next-btn">
           <span class="sub">Next Project</span>
-          <span class="main">Go to Next Case</span>
+
+          <span class="main">
+            {{ nextProject ? nextProject.title : 'Go to Next Case' }}
+          </span>
+
           <span class="arrow">→</span>
         </button>
       </section>
@@ -204,7 +208,7 @@ const loadProjectData = (id) => {
 }
 
 const getMainImage = (p) => {
-  if (p.media && p.media.length > 0) return p.media[0].url
+  if (p.thumbnail && p.thumbnail.length > 0) return p.thumbnail
   return p.thumbnail || 'https://via.placeholder.com/1920x1080/333/fff'
 }
 
@@ -216,6 +220,21 @@ const liveLinks = computed(() => {
   return project.value.links.live
 })
 
+// [추가됨] 다음 프로젝트 정보를 미리 계산해두는 computed
+const nextProject = computed(() => {
+  // 현재 프로젝트 데이터가 없으면 null 반환
+  if (!project.value || allProjects.value.length === 0) return null
+
+  // 현재 프로젝트의 인덱스 찾기
+  const currentIndex = allProjects.value.findIndex((p) => Number(p.id) === Number(project.value.id))
+
+  // 다음 인덱스 계산 (마지막 프로젝트면 다시 0번으로)
+  const nextIndex = (currentIndex + 1) % allProjects.value.length
+
+  // 다음 프로젝트 객체 반환
+  return allProjects.value[nextIndex]
+})
+
 onMounted(() => loadProjectData(route.params.id))
 watch(
   () => route.params.id,
@@ -223,9 +242,11 @@ watch(
 )
 
 const goHome = () => router.push({ name: 'projects' })
+
+// [수정됨] 위에서 계산해둔 nextProject 변수를 활용
 const goToNextProject = () => {
-  const currentIndex = allProjects.value.findIndex((p) => Number(p.id) === Number(project.value.id))
-  const nextIndex = (currentIndex + 1) % allProjects.value.length
-  router.push({ name: 'project-detail', params: { id: allProjects.value[nextIndex].id } })
+  if (nextProject.value) {
+    router.push({ name: 'project-detail', params: { id: nextProject.value.id } })
+  }
 }
 </script>
