@@ -484,114 +484,131 @@ $max-width: 1200px;
 }
 
 // --- Responsive Adjustments ---
+/* --- Responsive Adjustments (Mobile Fix) --- */
 @media (max-width: 1024px) {
-  $container-padding: 0 30px;
-
+  // 1. 전체 여백 조정
   .hero-section,
   .skills-section,
   .experience-section,
   .education-section,
-  .cta-section {
-    padding: 100px 0;
+  .cta-section,
+  .profile-section,
+  .intro-section {
+    padding: 60px 0; // 상하 여백 줄임
   }
 
+  .hero-container,
+  .profile-container,
+  .intro-container,
+  .skills-container,
+  .experience-container,
+  .education-container,
+  .cta-container {
+    padding: 0 20px; // 좌우 패딩 축소
+  }
+
+  // 2. 프로필 섹션: 위아래로 배치
   .profile-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important; // 강제로 1열 만들기
 
     .profile-image-wrap {
-      grid-border-right: none; // 모바일에서 오른쪽 선 제거
-      border-bottom: 1px solid $color-line-strong; // 아래 선 추가
+      border-right: none;
+      border-bottom: 1px solid #111;
 
       .profile-img-effect {
-        min-height: 400px;
-        border-bottom: none; // 중복 제거
+        min-height: 400px; // 모바일에서 이미지 높이 적당히
       }
     }
-    .profile-container {
-      border: none;
-    } // 모바일에서 컨테이너 보더 제거
   }
 
+  .profile-content {
+    // 모바일에서도 정보가 잘 보이게 패딩 조정
+    .profile-header {
+      padding: 30px 0;
+    }
+    .info-row {
+      grid-template-columns: 100px 1fr;
+      padding: 20px 0; // 좌우 패딩 제거
+    }
+  }
+
+  // 3. 인트로 섹션 (여기가 제일 많이 깨졌던 부분)
   .intro-grid {
-    grid-template-columns: 1fr;
+    display: flex !important; // 그리드 대신 flex로 변경
+    flex-direction: column;
+    border-top: 1px solid #111;
+
     .intro-label-wrap {
+      width: 100%;
       border-right: none;
-      border-bottom: 1px solid $color-line-strong;
-      padding-bottom: 20px;
+      border-bottom: 1px solid #111;
+      padding: 20px 0;
     }
+
     .intro-content {
-      padding: 30px 0 0 0;
+      padding: 30px 0 0 0 !important; // [중요] 왼쪽 여백(60px) 제거
+      max-width: 100%;
     }
   }
 
-  .skills-grid,
-  .education-grid {
-    grid-template-columns: 1fr;
-    .grid-border-right {
-      border-right: none;
-    } // 세로선 제거
-  }
-  .skill-category:nth-child(odd) {
-    border-right: none;
-  }
-  .skill-category:nth-child(1),
-  .skill-category:nth-child(2),
-  .skill-category:nth-child(3) {
-    border-bottom: 1px solid $color-line-strong;
+  // 4. 스킬 섹션
+  .skills-grid {
+    grid-template-columns: 1fr !important; // 1열로 변경
+
+    .skill-category {
+      border-right: none !important; // 세로선 제거
+      border-bottom: 1px solid #111; // 가로선 추가
+      padding: 30px 0; // 좌우 패딩 제거
+
+      &:last-child {
+        border-bottom: none;
+      }
+    }
   }
 
+  // 5. 경력 섹션
   .timeline-item {
-    grid-template-columns: 1fr;
+    display: flex !important;
+    flex-direction: column;
+
     .timeline-date-wrap {
       border-right: none;
-      padding: 30px 0 10px 0;
+      padding: 20px 0 10px 0;
+      border-bottom: 1px solid #eee; // 날짜와 내용 구분선
+      margin-bottom: 20px;
     }
+
     .timeline-content {
-      padding: 0 0 40px 0;
+      padding: 0 0 40px 0 !important; // 왼쪽 여백 제거
     }
+  }
+
+  // 6. 학력 섹션
+  .education-grid {
+    grid-template-columns: 1fr !important;
+    border-bottom: none; // 모바일에서는 맨 아래 선 제거 (깔끔하게)
   }
 
   .education-col {
-    padding: 30px 0;
-    &:first-child {
-      border-bottom: 1px solid $color-line-strong;
-    }
+    padding: 30px 0 !important;
+    border-right: none !important;
+    border-bottom: 1px solid #111;
+
     &:last-child {
-      padding-left: 0;
+      border-bottom: 1px solid #111;
     }
   }
-}
 
-@media (max-width: 768px) {
-  $container-padding: 0 20px;
-
-  .hero-section {
-    padding: 120px 0 80px;
+  // 7. 폰트 및 텍스트 줄바꿈 방지 (한글 깨짐 해결)
+  body {
+    word-break: keep-all; // 단어 단위로 줄바꿈
   }
 
-  .profile-img-effect {
-    min-height: 300px;
+  .hero-title {
+    font-size: 14vw; // 모바일에 맞춰 타이틀 크기 조정
   }
-  .profile-header {
-    padding: 30px 20px;
-  }
-  .info-row {
-    padding: 20px;
-    grid-template-columns: 100px 1fr;
-  }
+
   .profile-name {
-    font-size: 36px;
-  }
-
-  .skill-category {
-    padding: 30px 20px;
-  }
-
-  .cta-links {
-    flex-direction: column;
-    .cta-button {
-      width: 100%;
-      text-align: center;
-    }
+    font-size: 32px;
   }
 }
