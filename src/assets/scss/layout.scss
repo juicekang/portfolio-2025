@@ -20,9 +20,6 @@ body {
   white-space: nowrap;
   border: 0;
 }
-.mt-auto {
-  margin-top: auto;
-}
 //main
 #app {
   background-color: #fff;
@@ -54,59 +51,6 @@ header {
   }
 }
 
-.sec-title {
-  font-size: 1.4rem;
-  font-weight: 700;
-  letter-spacing: -0.07rem;
-  margin-bottom: 3rem;
-}
-
-// main {
-//   > section {
-//     padding-top: 16rem;
-//     .container {
-//       height: 100%;
-//       padding: 5rem;
-//     }
-//   }
-//   .section {
-//     &-title {
-//       font-weight: 700;
-//       font-size: 10rem;
-//     }
-//     &-main {
-//       padding-left: 10px;
-//       padding-right: 10px;
-
-//       .main-title {
-//         .main-logo-img {
-//           display: block;
-//           width: 100%;
-//         }
-//       }
-//       .main-info {
-//         padding-top: 7.5rem;
-//         font-size: 2.5rem;
-//         font-weight: 700;
-//         letter-spacing: -1px;
-//       }
-//       .main-foot {
-//         display: flex;
-//         align-items: flex-end;
-//         justify-content: space-between;
-//         font-size: 2rem;
-//         margin-top: auto;
-//       }
-//     }
-//     // &-about{
-
-//     // }
-//     &-works {
-//       padding-top: 12rem;
-//     }
-//   }
-// }
-
 // --- Common Utilities ---
 .container {
   max-width: $max-width;
@@ -121,49 +65,32 @@ header {
   max-width: $max-width-wide;
   margin: 0 auto;
   padding: 0 $p-container;
-  @include mobile {
-    padding: 0 $p-container-m;
+  @include tablet {
+    padding: 0 $p-container-m !important;
   }
 }
 
 // Backgrounds
 .white-bg {
-  background: $c-bg;
+  background: $c-bg-white;
 }
 .gray-bg {
   background: $c-bg-gray;
 }
 .dark-bg {
   background: $c-bg-dark;
-  color: $c-text-light;
-}
-
-// Margins
-.mb-60 {
-  margin-bottom: 60px;
+  color: $c-bg-white;
 }
 
 //  Borders (공통 사용)
 .border-bottom {
-  border-bottom: 1px solid $c-line-strong;
+  border-bottom: 1px solid $c-bg-dark;
 }
 .border-top {
-  border-top: 1px solid $c-line-strong;
+  border-top: 1px solid $c-bg-dark;
 }
 .border-right {
-  border-right: 1px solid $c-line-strong;
-}
-.main-border-bottom {
-  border-bottom: 1px solid $c-line-strong;
-}
-.grid-border-top {
-  border-top: 1px solid $c-line-strong;
-}
-.grid-border-bottom {
-  border-bottom: 1px solid $c-line-strong;
-}
-.grid-border-right {
-  border-right: 1px solid $c-line-strong;
+  border-right: 1px solid $c-bg-dark;
 }
 
 // --- Typography ---
@@ -181,18 +108,19 @@ header {
   margin-bottom: 40px;
   letter-spacing: -0.02em;
   &.light {
-    color: $c-text-light;
+    color: $c-bg-white;
   }
 }
 
 .section-title-s {
   font-size: 24px;
   font-weight: 800;
-  //text-transform: uppercase;
   border-top: 4px solid $c-text-primary;
   padding-top: 20px;
   display: inline-block;
 }
+
+// --- sub hero section
 
 // --- Common Component: Loading Screen ---
 .loading-screen {
@@ -201,7 +129,7 @@ header {
   left: 0;
   width: 100%;
   height: 100vh;
-  background: $c-bg;
+  background: $c-bg-white;
   z-index: 9999;
   display: flex;
   justify-content: center;
@@ -228,14 +156,16 @@ header {
 // Detail 페이지의 Hero는 스타일이 달라서 별도 파일에 둡니다.
 .text-hero-section {
   padding: 160px 0 100px;
-  border-bottom: 1px solid $c-line-strong;
-
+  border-bottom: 1px solid $c-bg-dark;
+  @include mobile {
+    padding: 120px 0 60px;
+  }
   .hero-container {
-    max-width: $max-width; // List 페이지는 1400px이므로 개별 오버라이딩 가능
+    max-width: $max-width-wide; // List 페이지는 1400px이므로 개별 오버라이딩 가능
     margin: 0 auto;
     padding: 0 $p-container;
-    @include mobile {
-      padding: 0 $p-container-m;
+    @include tablet {
+      padding: 0 $p-container-m !important;
     }
   }
 
@@ -243,7 +173,6 @@ header {
     @extend .section-heading-style;
     margin-bottom: 40px;
     color: $c-text-tertiary;
-    //text-transform: uppercase;
   }
 
   .hero-title {
@@ -252,298 +181,13 @@ header {
     line-height: 1;
     letter-spacing: -0.03em;
     color: $c-text-primary;
-    //text-transform: uppercase;
-
+    @include mobile {
+      font-size: 14vw;
+    }
     sup {
       font-size: 0.4em;
       vertical-align: top;
       margin-left: 10px;
-      //color: $c-text-sub;
     }
-  }
-
-  @include mobile {
-    padding: 120px 0 60px;
-    .hero-title {
-      font-size: 14vw;
-    }
-  }
-}
-
-// --- Variables (Global에서 가져온다고 가정하되, 여기서 정의) ---
-
-// Utility
-.border-bottom {
-  border-bottom: 1px solid $c-line-strong;
-}
-.border-top {
-  border-top: 1px solid $c-line-strong;
-}
-.border-right {
-  border-right: 1px solid $c-line-strong;
-}
-
-.main-page {
-  background: $c-bg;
-  color: $c-text;
-  width: 100%;
-  overflow-x: hidden;
-  // --- Hero Section ---
-  .hero-section {
-    padding-top: 80px; // 헤더 높이만큼
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-
-    .hero-container {
-      width: 100%;
-      max-width: 1920px; // Full width 느낌
-      margin: 0 auto;
-      padding: 0 40px;
-      display: flex;
-      flex-direction: column;
-      height: calc(100vh - 80px); // 화면 꽉 차게
-    }
-  }
-}
-
-// 1. Logo Area (Entrance Animation: Slide Up)
-.logo-wrapper {
-  flex: 0 0 auto; // 높이 고정 아님
-  padding: 40px 0;
-  opacity: 0;
-  transform: translateY(50px);
-  transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
-
-  &.loaded {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  .main-logo-svg {
-    width: 100%;
-    height: auto;
-    max-height: 25vh; // 화면 높이의 25% 제한
-    display: block;
-  }
-}
-
-// 2. Hero Grid (Entrance Animation: Fade In)
-.hero-grid {
-  flex: 1; // 남은 공간 채우기
-  display: grid;
-  grid-template-columns: 60% 40%; // 6:4 비율
-
-  .grid-col {
-    opacity: 0;
-    transition: opacity 1s ease 0.5s; // 0.5초 딜레이
-    &.loaded {
-      opacity: 1;
-    }
-  }
-}
-
-// Left Column: Typewriter
-.statement-col {
-  padding: 40px 40px 0 0; // 우측, 상단 여백
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-
-  .statement-label,
-  .statement-static {
-    font-size: clamp(20px, 2vw, 30px);
-    font-weight: 700;
-    color: #999;
-  }
-
-  .typewriter-wrapper {
-    font-size: clamp(40px, 6vw, 100px);
-    font-weight: 800;
-    line-height: 1.1;
-    margin: 20px 0;
-    color: $c-text;
-    min-height: 1.2em; // 높이 확보
-
-    .cursor {
-      display: inline-block;
-      width: 0.1em;
-      height: 0.8em;
-      background-color: $c-text;
-      margin-left: 10px;
-      &.blinking {
-        animation: blink 1s step-end infinite;
-      }
-    }
-  }
-}
-
-@keyframes blink {
-  50% {
-    opacity: 0;
-  }
-}
-
-// Right Column: Meta Info
-.meta-col {
-  display: flex;
-  flex-direction: column;
-
-  .meta-row {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 30px 0 30px 40px;
-
-    .label {
-      font-size: 12px;
-      font-weight: 700;
-      color: #999;
-      margin-bottom: 10px;
-      letter-spacing: 0.1em;
-    }
-    .value {
-      font-size: 24px;
-      font-weight: 600;
-      line-height: 1.4;
-
-      &.available {
-        color: #27ae60;
-        font-size: 16px;
-        font-weight: 700;
-      }
-    }
-  }
-
-  .scroll-trigger-row {
-    border-bottom: none;
-    align-items: flex-end; // 우측 하단 배치
-    justify-content: flex-end;
-  }
-}
-
-// Spinning Badge
-.spin-badge {
-  position: relative;
-  width: 120px;
-  height: 120px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  svg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    animation: spin 10s linear infinite;
-    fill: currentColor;
-
-    text {
-      font-weight: 700;
-      letter-spacing: 2px;
-    }
-  }
-
-  .arrow {
-    font-size: 30px;
-  }
-}
-
-@keyframes spin {
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-// 3. Marquee (Entrance Animation: Width expand)
-.marquee-wrapper {
-  overflow: hidden;
-  white-space: nowrap;
-  padding: 15px 0;
-  background: $c-text; // 검은 배경
-  color: #fff; // 흰 글씨
-
-  opacity: 0;
-  transition: opacity 1s ease 0.8s;
-  &.loaded {
-    opacity: 1;
-  }
-
-  .marquee-track {
-    display: inline-block;
-    animation: marquee 20s linear infinite;
-  }
-
-  .marquee-item {
-    font-size: 16px;
-    font-weight: 700;
-    margin-right: 50px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-  }
-}
-
-@keyframes marquee {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
-
-// --- Responsive ---
-@media (max-width: 1024px) {
-  .hero-section .hero-container {
-    padding: 0 20px !important;
-  }
-
-  .hero-grid {
-    grid-template-columns: 1fr;
-
-    .statement-col {
-      padding: 40px 0;
-      border-right: none;
-      border-bottom: 1px solid $c-line-strong;
-      text-align: center;
-      align-items: center;
-    }
-
-    .meta-col {
-      flex-direction: row;
-      flex-wrap: wrap;
-
-      .meta-row {
-        flex: 1 1 50%;
-        padding: 20px;
-        border-right: 1px solid $c-line-strong;
-        &:nth-child(2) {
-          border-right: none;
-        }
-        &:last-child {
-          flex: 1 1 100%;
-          align-items: center;
-          justify-content: center;
-          padding: 40px 0;
-          border-right: 0;
-        }
-      }
-    }
-  }
-}
-
-@media (max-width: 768px) {
-  .logo-wrapper .main-logo-svg {
-    max-height: 15vh;
-  }
-  .statement-col .typewriter-wrapper {
-    font-size: 40px;
-  }
-  .hero-grid .meta-col .meta-row {
-    flex: 1 1 100%;
-    border-right: none;
   }
 }

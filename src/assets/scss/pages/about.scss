@@ -1,29 +1,37 @@
 // about.scss
-// @import 'variables';
-
-// --- Hero Section ---
-// layout.scss의 .text-hero-section을 사용하되 클래스명 매핑 필요
-// HTML에서 <section class="hero-section text-hero-section"> 형태로 사용 권장
-.hero-section {
-  @extend .text-hero-section;
-  padding: 180px 0 140px; // About 페이지 특화 패딩
+.about-page {
+  & > section {
+    padding: $p-section;
+    @include tablet {
+      padding: 60px 0;
+    }
+  }
 }
-
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0;
+  @include tablet {
+    grid-template-columns: 1fr !important;
+  }
+}
 // --- Profile Section ---
 .profile-section {
-  padding: 0;
-
-  .container-fluid {
-    // border-left: 1px solid $c-line-strong;
-    // border-right: 1px solid $c-line-strong;
-  }
-
+  padding: 0 !important;
   .profile-grid {
     display: grid;
     grid-template-columns: 400px 1fr;
     align-items: stretch;
+    @include tablet {
+      grid-template-columns: 1fr !important;
+    }
   }
-
+  .profile-image-wrap {
+    @include tablet {
+      border-right: none;
+      border-bottom: 1px solid $c-bg-dark;
+    }
+  }
   .profile-img-effect {
     width: 100%;
     height: 100%;
@@ -31,7 +39,9 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    border-bottom: 1px solid $c-line-strong;
+    @include tablet {
+      min-height: 400px;
+    }
     .image-fallback {
       color: #ccc;
       font-weight: 700;
@@ -44,6 +54,9 @@
     flex-direction: column;
     .profile-header {
       padding: 40px;
+      @include tablet {
+        padding: 30px 0;
+      }
     }
   }
 
@@ -72,6 +85,10 @@
     grid-template-columns: 140px 1fr;
     align-items: center;
     padding: 25px 40px;
+    @include tablet {
+      grid-template-columns: 100px 1fr;
+      padding: 20px 0;
+    }
     .info-label {
       @extend .section-heading-style;
     }
@@ -89,24 +106,34 @@
 
 // --- Introduction Section ---
 .intro-section {
-  padding: $p-section;
-  .intro-container {
-    @extend .container;
-  }
-
   .intro-grid {
     display: grid;
     grid-template-columns: 250px 1fr;
     gap: 0;
-    border-top: 1px solid $c-line-strong;
+    border-top: 1px solid $c-bg-dark;
+    @include tablet {
+      display: flex !important;
+      flex-direction: column;
+      border-top: 1px solid $c-bg-dark;
+    }
   }
 
   .intro-label-wrap {
     padding-top: 40px;
+    @include tablet {
+      width: 100%;
+      border-right: none;
+      border-bottom: 1px solid $c-bg-dark;
+      padding: 20px 0;
+    }
   }
   .intro-content {
     padding: 40px 0 0 60px;
     max-width: 900px;
+    @include tablet {
+      padding: 30px 0 0 0 !important;
+      max-width: 100%;
+    }
   }
 
   .intro-text {
@@ -123,23 +150,26 @@
 
 // --- Skills Section ---
 .skills-section {
-  padding: 120px 0;
-  .skills-container {
-    @extend .container;
-  }
   .section-heading {
     @extend .section-heading-style;
     margin-bottom: 40px;
   }
 
   .skills-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0;
+    @extend .about-grid;
   }
 
   .skill-category {
     padding: 50px 40px;
+    @include tablet {
+      border-right: none !important;
+      border-bottom: 1px solid $c-bg-dark;
+      padding: 30px 0;
+      border-top: none;
+      &:last-child {
+        border-bottom: none;
+      }
+    }
     .category-title {
       font-size: 22px;
       font-weight: 700;
@@ -161,7 +191,7 @@
           top: 12px;
           width: 8px;
           height: 1px;
-          background-color: $c-line-strong;
+          background-color: $c-bg-dark;
         }
       }
     }
@@ -170,10 +200,6 @@
 
 // --- Experience Section ---
 .experience-section {
-  padding: 120px 0;
-  .experience-container {
-    @extend .container;
-  }
   .section-heading {
     @extend .section-heading-style;
     margin-bottom: 40px;
@@ -188,20 +214,32 @@
     display: grid;
     grid-template-columns: 250px 1fr;
     gap: 0;
+    @include tablet {
+      display: flex !important;
+      flex-direction: column;
+    }
   }
 
   .timeline-date-wrap {
     padding: 40px 40px 40px 0;
+    @include tablet {
+      border-right: none;
+      padding: 20px 0 10px 0;
+      border-bottom: 1px solid $c-line-weak;
+      margin-bottom: 20px;
+    }
   }
   .timeline-date {
     font-size: 16px;
     font-weight: 700;
     color: $c-text-primary;
-    //font-family: $f-mono;
   }
 
   .timeline-content {
     padding: 40px 0 40px 60px;
+    @include tablet {
+      padding: 0 0 40px 0;
+    }
     .timeline-title {
       font-size: 26px;
       font-weight: 700;
@@ -236,23 +274,27 @@
 
 // --- Education Section ---
 .education-section {
-  padding: 120px 0;
-  .education-container {
-    @extend .container;
-  }
-
   .education-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0;
-    border-bottom: 1px solid $c-line-strong;
+    @extend .about-grid;
+    border-bottom: 1px solid $c-bg-dark;
+    @include tablet {
+      border-bottom: none;
+    }
   }
 
   .education-col {
     padding: 40px 40px 40px 0;
+    @include tablet {
+      border-right: none;
+      border-bottom: 1px solid $c-bg-dark;
+    }
     &:last-child {
       padding-left: 40px;
       padding-right: 0;
+      @include tablet {
+        padding-left: 0;
+        border-bottom: 1px solid $c-bg-dark;
+      }
     }
     .section-heading {
       @extend .section-heading-style;
@@ -269,7 +311,6 @@
       font-weight: 600;
       color: $c-text-tertiary;
       margin-bottom: 8px;
-      //font-family: $f-mono;
     }
     .education-title {
       font-size: 22px;
@@ -291,9 +332,7 @@
   padding: 160px 0;
   background: #000;
   color: #fff;
-  .cta-container {
-    @extend .container;
-    max-width: 800px;
+  .container-fluid {
     text-align: center;
   }
 
@@ -339,97 +378,6 @@
         background: #fff;
         color: #000;
       }
-    }
-  }
-}
-
-// --- Responsive (About Specific) ---
-@include tablet {
-  .hero-section,
-  .skills-section,
-  .experience-section,
-  .education-section,
-  .cta-section,
-  .profile-section,
-  .intro-section {
-    padding: 60px 0;
-  }
-
-  // Profile
-  .profile-grid {
-    grid-template-columns: 1fr !important;
-    .profile-image-wrap {
-      border-right: none;
-      border-bottom: 1px solid $c-line-strong;
-    }
-    .profile-img-effect {
-      min-height: 400px;
-    }
-  }
-  .profile-content {
-    .profile-header {
-      padding: 30px 0;
-    }
-    .info-row {
-      grid-template-columns: 100px 1fr;
-      padding: 20px 0;
-    }
-  }
-
-  // Intro
-  .intro-grid {
-    display: flex !important;
-    flex-direction: column;
-    border-top: 1px solid $c-line-strong;
-    .intro-label-wrap {
-      width: 100%;
-      border-right: none;
-      border-bottom: 1px solid $c-line-strong;
-      padding: 20px 0;
-    }
-    .intro-content {
-      padding: 30px 0 0 0 !important;
-      max-width: 100%;
-    }
-  }
-
-  // Skills & Education (Grid reset)
-  .skills-grid,
-  .education-grid {
-    grid-template-columns: 1fr !important;
-  }
-  .skill-category {
-    border-right: none !important;
-    border-bottom: 1px solid $c-line-strong;
-    padding: 30px 0;
-    &:last-child {
-      border-bottom: none;
-    }
-  }
-  .education-grid {
-    border-bottom: none;
-  }
-  .education-col {
-    padding: 30px 0 !important;
-    border-right: none !important;
-    border-bottom: 1px solid $c-line-strong;
-    &:last-child {
-      border-bottom: 1px solid $c-line-strong;
-    }
-  }
-
-  // Experience
-  .timeline-item {
-    display: flex !important;
-    flex-direction: column;
-    .timeline-date-wrap {
-      border-right: none;
-      padding: 20px 0 10px 0;
-      border-bottom: 1px solid $c-line-weak;
-      margin-bottom: 20px;
-    }
-    .timeline-content {
-      padding: 0 0 40px 0 !important;
     }
   }
 }

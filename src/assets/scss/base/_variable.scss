@@ -1,20 +1,17 @@
 // _variables.scss
 
 // --- Colors ---
-$c-bg: #ffffff;
+$c-bg-white: #ffffff;
 $c-bg-gray: #f4f4f4;
 $c-bg-dark: #111111;
 
 $c-text-primary: #000000;
 $c-text-secondary: #333333;
 $c-text-tertiary: #666666;
-$c-text-light: #ffffff;
 
-$c-line-strong: #111111; // 구조적인 라인
 $c-line-weak: #e5e5e5; // 보조 라인
-$c-text: #000;
 // --- Fonts ---
-$f-mono: 'Roboto Mono', monospace; // 숫자, 라벨용
+//$f-mono: 'Roboto Mono', monospace; // 숫자, 라벨용
 
 // --- Layout & Spacing ---
 $max-width: 1200px;

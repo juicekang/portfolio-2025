@@ -1,37 +1,39 @@
 // projectslist.scss
 //@import 'variables';
 
-// --- Hero Section ---
-// layout.scss의 .text-hero-section을 상속
-.hero-section {
-  @extend .text-hero-section;
-  .hero-container {
-    max-width: $max-width-wide;
-  } // List 페이지는 더 넓게
-}
-
 .projects-list-page {
   padding-bottom: 120px;
   // --- Projects Grid ---
   .projects-grid-wrap {
-    border-left: 1px solid $c-line-strong;
+    border-left: 1px solid $c-bg-dark;
+    // @include mobile {
+    //   border-top: 1px solid $c-bg-dark;
+    // }
   }
 
   .projects-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 0;
+    @include tablet {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include mobile {
+      grid-template-columns: 1fr;
+    }
   }
 
   .project-card {
-    background: $c-bg;
-    border-right: 1px solid $c-line-strong;
-    border-bottom: 1px solid $c-line-strong;
+    background: $c-bg-white;
+    border-right: 1px solid $c-bg-dark;
+    border-bottom: 1px solid $c-bg-dark;
     cursor: pointer;
     display: flex;
     flex-direction: column;
     transition: background-color 0.3s;
-
+    // @include mobile {
+    //   border-right: none;
+    // }
     &:hover {
       background-color: #f9f9f9;
       transform: translateY(0);
@@ -52,7 +54,7 @@
     aspect-ratio: 16 / 10;
     overflow: hidden;
     background: #f0f0f0;
-    border-bottom: 1px solid $c-line-strong;
+    border-bottom: 1px solid $c-bg-dark;
 
     img {
       position: absolute;
@@ -101,7 +103,9 @@
     flex: 1;
     display: flex;
     flex-direction: column;
-
+    @include mobile {
+      padding: 24px 20px;
+    }
     .info-header {
       display: flex;
       justify-content: space-between;
@@ -109,7 +113,6 @@
       margin-bottom: 20px;
     }
     .project-idx {
-      //font-family: $f-mono;
       font-size: 14px;
       font-weight: 700;
       color: #ccc;
@@ -162,9 +165,8 @@
     justify-content: space-between;
     align-items: center;
     padding: 20px 0;
-    border-bottom: 1px solid $c-line-strong;
+    border-bottom: 1px solid $c-bg-dark;
     margin-top: 60px;
-    //font-family: $f-mono;
 
     .stat-label {
       font-size: 12px;
@@ -182,29 +184,6 @@
     text-align: center;
     font-size: 18px;
     color: #999;
-    border-bottom: 1px solid $c-line-strong;
-  }
-
-  // --- Responsive (List Specific) ---
-  @media (max-width: 1200px) {
-    .projects-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-
-  @include mobile {
-    .projects-grid-wrap {
-      border-left: none;
-      border-top: 1px solid $c-line-strong;
-    }
-    .projects-grid {
-      grid-template-columns: 1fr;
-    }
-    .project-card {
-      border-right: none;
-    }
-    .project-info {
-      padding: 24px 20px;
-    }
+    border-bottom: 1px solid $c-bg-dark;
   }
 }

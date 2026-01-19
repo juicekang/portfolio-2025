@@ -12,9 +12,11 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    color: $c-text-light;
+    color: $c-bg-white;
     overflow: hidden;
-
+    @include tablet {
+      height: 60vh;
+    }
     .bg-image {
       position: absolute;
       top: 0;
@@ -73,7 +75,7 @@
 // --- Meta Info ---
 .meta-section {
   background: $c-bg-dark;
-  color: $c-text-light;
+  color: $c-bg-white;
   padding: 40px 0;
   border-bottom: 1px solid #333;
   .meta-container {
@@ -82,6 +84,10 @@
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 30px;
+    @include mobile {
+      flex-direction: column;
+      gap: 20px;
+    }
   }
   .meta-col {
     display: flex;
@@ -156,11 +162,21 @@
     display: flex;
     gap: 60px;
     margin-bottom: 100px;
+    @include tablet {
+      flex-direction: column;
+      gap: 20px;
+    }
     .left-col {
       width: 30%;
+      @include tablet {
+        width: 100%;
+        br {
+          display: none;
+        }
+      }
     }
     .right-col {
-      width: 70%;
+      flex: 1;
       .body-text {
         font-size: 18px;
         line-height: 1.8;
@@ -179,6 +195,9 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 40px;
+      @include mobile {
+        grid-template-columns: 1fr;
+      }
       .feature-card {
         border-top: 1px solid #000;
         padding-top: 20px;
@@ -213,6 +232,10 @@
     gap: 40px;
     padding: 40px 0;
     border-bottom: 1px solid #333;
+    @include tablet {
+      grid-template-columns: 1fr;
+      gap: 15px;
+    }
     .c-header {
       display: flex;
       gap: 15px;
@@ -270,6 +293,9 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 40px;
+    @include tablet {
+      grid-template-columns: 1fr;
+    }
   }
   .process-card {
     background: #fff;
@@ -282,6 +308,10 @@
       margin-bottom: 30px;
       border-bottom: 1px solid #eee;
       padding-bottom: 20px;
+      @include mobile {
+        flex-direction: column;
+        gap: 10px;
+      }
       .card-num {
         font-size: 12px;
         color: #999;
@@ -327,6 +357,10 @@
     justify-content: space-around;
     flex-wrap: wrap;
     gap: 40px;
+    @include mobile {
+      flex-direction: column;
+      gap: 30px;
+    }
     .result-item {
       text-align: center;
       .r-value {
@@ -377,41 +411,5 @@
     .arrow {
       font-size: 40px;
     }
-  }
-}
-
-// --- Responsive (Detail Specific) ---
-@include tablet {
-  .content-section .split-layout {
-    flex-direction: column;
-    gap: 20px;
-  }
-  .content-section .split-layout .left-col,
-  .right-col {
-    width: 100%;
-  }
-  .challenge-section .cards-grid {
-    grid-template-columns: 1fr;
-  }
-  .contribution-section .contribution-row {
-    grid-template-columns: 1fr;
-    gap: 15px;
-  }
-}
-
-@include mobile {
-  .hero-section {
-    height: 60vh;
-  }
-  .meta-container {
-    flex-direction: column;
-    gap: 20px;
-  }
-  .features-wrapper .features-grid {
-    grid-template-columns: 1fr;
-  }
-  .results-section .results-grid {
-    flex-direction: column;
-    gap: 30px;
   }
 }

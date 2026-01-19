@@ -44,13 +44,12 @@
             </div>
           </div>
         </div>
-
-        <div class="marquee-wrapper border-top border-bottom" :class="{ loaded: isLoaded }">
-          <div class="marquee-track">
-            <span v-for="n in 4" :key="n" class="marquee-item">
-              HTML5 • CSS3 • JAVASCRIPT • VUE.JS • INTERACTIVE WEB • ACCESSIBILITY •
-            </span>
-          </div>
+      </div>
+      <div class="marquee-wrapper border-top border-bottom" :class="{ loaded: isLoaded }">
+        <div class="marquee-track">
+          <span v-for="n in 4" :key="n" class="marquee-item">
+            HTML5 • CSS3 • JAVASCRIPT • VUE.JS • INTERACTIVE WEB • ACCESSIBILITY •
+          </span>
         </div>
       </div>
     </section>

@@ -80,7 +80,7 @@
         <div class="container-fluid">
           <div class="split-layout">
             <div class="left-col sticky-col">
-              <h2 class="section-title-s">Project<br />Overview</h2>
+              <h2 class="section-title-s">Project <br />Overview</h2>
             </div>
             <div class="right-col">
               <p class="body-text">{{ project.overview }}</p>
@@ -124,7 +124,7 @@
 
       <section class="gallery-section" v-if="project.media?.length" data-aos="fade-up">
         <div class="container-fluid">
-          <h2 class="section-title-s mb-60">Visuals</h2>
+          <h2 class="section-title-s mb-[60px]">Visuals</h2>
           <div class="gallery-grid">
             <div v-for="(media, index) in project.media" :key="index" class="gallery-item">
               <video
@@ -184,8 +184,8 @@
         </div>
       </section>
 
-      <section class="next-nav" data-aos="fade-up">
-        <button @click="goToNextProject" class="next-btn">
+      <section class="next-nav">
+        <button @click="goToNextProject" class="next-btn" data-aos="fade-up">
           <span class="sub">Next Project</span>
 
           <span class="main">

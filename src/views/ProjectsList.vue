@@ -1,6 +1,6 @@
 <template>
   <div class="projects-list-page">
-    <section class="hero-section">
+    <section class="text-hero-section">
       <div class="hero-container" data-aos="fade-up">
         <div class="hero-label">ARCHIVE</div>
         <h2 class="hero-title">

@@ -1,16 +1,16 @@
 <template>
   <div class="about-page">
-    <section class="hero-section main-border-bottom">
-      <div class="hero-container" data-aos="fade-up">
+    <section class="text-hero-section border-bottom">
+      <div class="container-fluid" data-aos="fade-up">
         <div class="hero-label">ABOUT ME</div>
         <h2 class="hero-title">precision & passion</h2>
       </div>
     </section>
 
-    <section class="profile-section main-border-bottom" data-aos="fade-up">
+    <section class="profile-section border-bottom" data-aos="fade-up">
       <div class="container-fluid">
         <div class="profile-grid">
-          <div class="profile-image-wrap grid-border-right">
+          <div class="profile-image-wrap border-right">
             <div
               class="image-placeholder profile-img-effect"
               style="background-image: url('/src/images/profile.jpg')"
@@ -18,21 +18,21 @@
           </div>
 
           <div class="profile-content">
-            <div class="profile-header grid-border-bottom">
+            <div class="profile-header border-bottom">
               <h2 class="profile-name">강민주</h2>
               <p class="profile-title">Kang Minju / Web Publisher</p>
             </div>
 
             <div class="profile-info">
-              <div class="info-row grid-border-bottom">
+              <div class="info-row border-bottom">
                 <span class="info-label">Email</span>
                 <a href="mailto:juicexoffee@gmail.com" class="info-value">juicexoffee@gmail.com</a>
               </div>
-              <div class="info-row grid-border-bottom">
+              <div class="info-row border-bottom">
                 <span class="info-label">Birth</span>
                 <span class="info-value">1992.11</span>
               </div>
-              <div class="info-row grid-border-bottom">
+              <div class="info-row border-bottom">
                 <span class="info-label">Location</span>
                 <span class="info-value">Seoul, Korea</span>
               </div>
@@ -46,10 +46,10 @@
       </div>
     </section>
 
-    <section class="intro-section main-border-bottom" data-aos="fade-up">
+    <section class="intro-section border-bottom" data-aos="fade-up">
       <div class="container-fluid">
         <div class="intro-grid">
-          <div class="intro-label-wrap grid-border-right">
+          <div class="intro-label-wrap border-right">
             <div class="intro-label section-heading-style">Introduction</div>
           </div>
           <div class="intro-content">
@@ -68,13 +68,13 @@
       </div>
     </section>
 
-    <section class="skills-section main-border-bottom" data-aos="fade-up">
+    <section class="skills-section border-bottom" data-aos="fade-up">
       <div class="container-fluid">
         <h2 class="section-heading">Skills & Expertise</h2>
 
-        <div class="skills-grid-wrap grid-border-top grid-border-bottom">
+        <div class="skills-grid-wrap border-top border-bottom">
           <div class="skills-grid">
-            <div class="skill-category grid-border-right">
+            <div class="skill-category border-right">
               <h3 class="category-title">Markup & Styling</h3>
               <ul class="skill-list">
                 <li>HTML5, 시맨틱 마크업</li>
@@ -96,7 +96,7 @@
               </ul>
             </div>
 
-            <div class="skill-category grid-border-top grid-border-right">
+            <div class="skill-category border-top border-right">
               <h3 class="category-title">Accessibility & Optimization</h3>
               <ul class="skill-list">
                 <li>웹 접근성 준수 (WCAG 2.1)</li>
@@ -106,7 +106,7 @@
               </ul>
             </div>
 
-            <div class="skill-category grid-border-top">
+            <div class="skill-category border-top">
               <h3 class="category-title">Tools & Collaboration</h3>
               <ul class="skill-list">
                 <li>Git, GitHub</li>
@@ -120,13 +120,13 @@
       </div>
     </section>
 
-    <section class="experience-section main-border-bottom" data-aos="fade-up">
+    <section class="experience-section border-bottom" data-aos="fade-up">
       <div class="container-fluid">
         <h2 class="section-heading">Work Experience</h2>
 
-        <div class="timeline grid-border-top">
-          <div class="timeline-item grid-border-bottom">
-            <div class="timeline-date-wrap grid-border-right">
+        <div class="timeline border-top">
+          <div class="timeline-item border-bottom">
+            <div class="timeline-date-wrap border-right">
               <div class="timeline-date">2024.01 – 2025.11</div>
             </div>
             <div class="timeline-content">
@@ -141,8 +141,8 @@
             </div>
           </div>
 
-          <div class="timeline-item grid-border-bottom">
-            <div class="timeline-date-wrap grid-border-right">
+          <div class="timeline-item border-bottom">
+            <div class="timeline-date-wrap border-right">
               <div class="timeline-date">2020.08 – 2023.12</div>
             </div>
             <div class="timeline-content">
@@ -159,13 +159,13 @@
       </div>
     </section>
 
-    <section class="education-section main-border-bottom" data-aos="fade-up">
+    <section class="education-section border-bottom" data-aos="fade-up">
       <div class="container-fluid">
         <div class="education-grid">
-          <div class="education-col grid-border-right">
+          <div class="education-col border-right">
             <h2 class="section-heading">Education</h2>
-            <div class="education-list grid-border-top">
-              <div class="education-item grid-border-bottom">
+            <div class="education-list border-top">
+              <div class="education-item border-bottom">
                 <div class="education-year">2011 – 2016</div>
                 <h3 class="education-title">성신여자대학교</h3>
                 <p class="education-major">국어국문학 전공 / 컴퓨터소프트웨어학 부전공</p>
@@ -181,7 +181,7 @@
     </section>
 
     <section class="cta-section" data-aos="fade-up">
-      <div class="cta-container">
+      <div class="container-fluid">
         <h2 class="cta-title">Let's Work Together</h2>
         <p class="cta-description">새로운 프로젝트나 협업 기회에 대해 언제든 연락 주세요</p>
         <div class="cta-links">
