@@ -48,7 +48,7 @@
   .main-logo-svg {
     width: 100%;
     height: auto;
-    max-height: 25vh; // 화면 높이의 25% 제한
+    //max-height: 25vh; // 화면 높이의 25% 제한
     display: block;
     @include mobile {
       max-height: 15vh;
