@@ -13,7 +13,7 @@ export const projects = [
       { type: 'video', url: '/src/images/projects/video/aidt-vid-01.mp4' },
     ],
     period: '2024.01 - 2025.10',
-    role: '메인 퍼블리셔',
+    role: '프론트엔드 퍼블리셔',
     teamSize: '퍼블리셔 10명',
     tags: ['반응형', '웹접근성/UDL', 'Vue3', 'Sass', '크로스브라우징'],
     overview:
@@ -110,7 +110,7 @@ export const projects = [
       { type: 'image', url: '/src/images/projects/kita-003.png' },
     ],
     period: '2023.06 - 2023.11',
-    role: '메인 퍼블리셔',
+    role: '퍼블리셔',
     teamSize: '퍼블리셔 2명',
     tags: ['반응형', '크로스브라우징'],
     overview:
@@ -122,11 +122,16 @@ export const projects = [
       '무역 전문가 1:1 실시간 상담',
     ],
     techStack: ['HTML5', 'SCSS', 'JavaScript', 'jQuery', 'Bootstrap', 'Git'],
+    rate: {
+      title: '전체 페이지 구축',
+      num: '80',
+      desc: '공지뉴스, 연구통계관세, 지원사업, 자문상담 하위 페이지 80% 이상 구축',
+    },
     contributions: [
       {
         title: '서브 페이지 UI 퍼블리싱',
         description:
-          '전체 서브 페이지 중 약 50%를 퍼블리싱하였으며, 기존 개발된 페이지 구조를 분석하고 직접 수정하여 변경된 디자인 요구사항을 반영했습니다.',
+          '전체 페이지 중 약 80%를 퍼블리싱하였으며, 기존 개발된 페이지 구조를 분석하고 직접 수정하여 변경된 디자인 요구사항을 반영했습니다.',
       },
       {
         title: '디자인 변경 및 유지보수 대응',
@@ -161,7 +166,7 @@ export const projects = [
       { type: 'image', url: '/src/images/projects/kita-eng-003.png' },
     ],
     period: '2023.06 - 2023.09',
-    role: '메인 퍼블리셔',
+    role: '퍼블리셔',
     teamSize: '퍼블리셔 2명',
     tags: ['반응형', '크로스브라우징'],
     overview:
@@ -172,6 +177,11 @@ export const projects = [
       '뉴스, 리포트, 정기간행물 중심의 정보 아카이브',
     ],
     techStack: ['HTML5', 'SCSS', 'JavaScript', 'jQuery', 'Bootstrap', 'Git'],
+    rate: {
+      title: '페이지 구축',
+      num: '50',
+      desc: '헤더, 공통 레이아웃, 푸터 구축 \n 메인 페이지 반응형 처리 \n About, Global Service 하위 페이지 구축',
+    },
     contributions: [
       {
         title: '전반적인 JavaScript 기능 개발 및 유지',
@@ -219,6 +229,11 @@ export const projects = [
       '다국어 지원 (한국어 / 영어)',
     ],
     techStack: ['HTML5', 'SCSS', 'jQuery', 'Bootstrap', 'swiper.js'],
+    rate: {
+      title: '서브 페이지 구축',
+      num: '100',
+      desc: '연구, 정기간행물, 커뮤니케이션, 연구원소개 등 서브페이지 100% 구축 \n 이후 유지보수 100% 담당',
+    },
     contributions: [
       {
         title: '기존 웹사이트 리뉴얼 및 구조 분석',
@@ -261,6 +276,11 @@ export const projects = [
     overview:
       '유니클로 공식 온라인 스토어의 정기 콘텐츠 퍼블리싱을 담당했습니다.사용자의 접근성과 사용성을 고려하여 PC와 모바일 환경 모두에 대응하는 적응형 레이아웃으로 제작하였으며, 제품 이미지와 화보 컨텐츠가 조화롭게 구성될 수 있도록 UI 디테일과 인터랙션 설계에 집중했습니다. 특히 모바일 환경에서는 빠른 정보 접근이 가능하도록 콘텐츠 흐름과 행동 유도 요소(CTA)를 최적화하여 사용자 경험을 개선했습니다.',
     techStack: ['HTML5', 'jQuery', 'CSS3', 'swiper.js'],
+    rate: {
+      title: '담당 페이지 구축',
+      num: '100',
+      desc: '티셔츠 인터뷰 리플렛, 폴로 티셔츠 리플렛, 경주 Day & Night 등 담당 페이지 PC / Mobile 100% 구축',
+    },
     contributions: [
       {
         title: '사용성 중심 인터랙션 및 동선 설계',
@@ -291,6 +311,11 @@ export const projects = [
       { type: 'video', url: '/src/images/projects/video/mirae-vid-03.mp4' },
       { type: 'video', url: '/src/images/projects/video/mirae-vid-04.mp4' },
       { type: 'video', url: '/src/images/projects/video/mirae-vid-05.mp4' },
+      { type: 'image', url: '/src/images/projects/mirae-001.png' },
+      { type: 'image', url: '/src/images/projects/mirae-002.png' },
+      { type: 'image', url: '/src/images/projects/mirae-003.jpg' },
+      { type: 'image', url: '/src/images/projects/mirae-004.jpg' },
+      { type: 'image', url: '/src/images/projects/mirae-005.jpg' },
     ],
     period: '2020.08 - 2023.02',
     role: '퍼블리셔',
@@ -299,11 +324,31 @@ export const projects = [
     overview:
       '미래엔 초등교과서의 전자저작물, 엠티처, 디지털교과서, 하루한장수학 등 디지털 컨텐츠 개발을 하였습니다. 다년간 다양한 게임형 인터랙션, 과학 가상실험실 등 학습용 인터랙션을 개발하였습니다. 유사한 형식의 게임형 인터랙션인 경우, 템플릿화하여 재사용할 수 있게끔 범용성이 높은 코드로 작성하였습니다. 프로젝트 특성상, 일정에 맞게 개발하는 것이 가장 중요했기 때문에 스케줄에 차질이 생기지 않도록 팀원들과 일정 회의를 하여 업무 분배를 철저히 하였습니다. ',
     techStack: ['HTML5', 'jQuery', 'CSS3', 'swiper.js'],
+    rate: {
+      title: '담당 과목 구축',
+      num: '100',
+      desc: '2020 ~ 2023 담당 과목 게임형 인터랙션, 가상실험실, 학습 인터랙션, 페이지 구축 100%',
+    },
     contributions: [
       {
-        title: '교육용 디지털 콘텐츠 개발',
+        title: '전자저작물(2020.08 ~ 2022.12)',
         description:
-          '미래엔 초등 교과서 전자저작물, 엠티처, 디지털교과서, 하루한장 수학 등 다양한 교육 콘텐츠 제작을 담당했습니다.',
+          '교과서에 별도 첨부 되어있는 전자저작물 CD를 통해 심화학습을 할 수 있는 디지털 콘텐츠입니다. 두더지잡기게임, 보드게임, 미로찾기 등의 인터랙션형 게임을 개발하였습니다. 게임 진행 로직을 도식화하여 필요한 함수를 작성하고 게임 스텝이 진행될 수 있도록 논리적인 구조로 js 코드를 작성하였습니다. 게임 형식이 반복되는 케이스가 많았기 때문에, 템플릿화 하여 사용할 수 있도록 범용성이 높은 코드를 지향하며 진행하였습니다.',
+      },
+      {
+        title: '엠티처(2021.02~2023.02)',
+        description:
+          '과학 과목을 담당하여 구축 및 개발하였으며, 수업을 진행하는 선생님의 화면과 학생들이 보는 화면이 동일하게 출력되어 수업을 원활하게 진행할 수 있도록 미러링이 되어야 하는 것이 중점이되는 디지털 컨텐츠를 개발하였습니다.',
+      },
+      {
+        title: '디지털교과서(2022.08~2022.11)',
+        description:
+          '국가검정표준에 맞는 디지털교과서 프로젝트를 진행하였습니다. 과학 과목을 맡아서 진행하였고, 디자인 오차가 없이 정확하게 퍼블리싱하는 것이 중요하였습니다. 더하여 웹브라우저, 윈도우 디지털교과서 전용 뷰어 프로그램, 태블릿PC, 스마트폰 등 어떤 해상도의 기기로 보아도 동일한 화면이 출력될 수 있도록 기기별 크로스 체크를 진행하였습니다. 과학 과목을 학습하며 가상 실험을 진행할 수 있는 다수의 가상실험실 인터랙션 개발에도 참여하였습니다. 국가검정표준에도 합격하여 좋은 성과를 이룰 수 있었습니다.',
+      },
+      {
+        title: '하루한장 수학 (2022.11~2022.12)',
+        description:
+          '하루에 하나씩 수학 미니 학습을 할 수 있는 인터랙션형 디지털 컨텐츠를 개발하였습니다. 수식을 도식화하고, 계산 과정이 이루어지는 과정을 순차적 인터랙션으로 보여주며 드래그앤드랍 활동을 통해 학생들의 학습을 도울 수 있는 컨텐츠입니다. 학습 블럭을 누르는 순서에 따라 순차적으로 진행되는 인터랙션이 많았기 때문에 순서가 꼬이지 않도록 여러가지 경우의 수를 체크하며 개발하였습니다. ',
       },
       {
         title: '게임형 인터랙션 및 학습 UI 개발',
@@ -346,12 +391,12 @@ export const projects = [
     overview:
       '온라인 행사를 손쉽게 주최할 수 있는 플랫폼 사이트입니다. 전체 반응형 웹사이트로 제작되었으며, 메인과 about 페이지를 제외한 서브페이지 퍼블리싱을 담당했습니다. 원활한 협업을 할 수 있도록 SCSS를 사용하여 진행되었으며, 그 결과 향상된 효율과 더 빨라진 업무 속도를 경험할 수 있었습니다. 또한 SCSS를 사용한 첫 프로젝트였기 때문에, 프로젝트가 종료된 뒤 팀원과 함께 전처리기 사용에 대한 피드백을 나누며 더 효율적인 사용 방법을 고찰할 수 있었습니다.',
     techStack: ['HTML5', 'jQuery', 'SCSS', 'swiper.js', 'Bootstrap'],
+    rate: {
+      title: '서브 페이지 구축',
+      num: '100',
+      desc: '메인 페이지 제외 서브 페이지 구축 100%',
+    },
     contributions: [
-      {
-        title: '반응형 서브페이지 퍼블리싱',
-        description:
-          '온라인 행사 플랫폼의 메인 및 About 페이지를 제외한 모든 서브페이지 퍼블리싱을 100% 담당했습니다.',
-      },
       {
         title: 'SCSS 기반 협업 시스템 구축',
         description:
@@ -388,6 +433,11 @@ export const projects = [
     overview:
       '셀트리온 뷰티몰의 모바일 사이트 메인과 서브페이지, 상세페이지 구축을 하였습니다. 어떤 디바이스에서 접속해도 동일한 화면이 나올 수 있도록 모바일 반응형을 체크하며 마크업하였습니다. 또한 셀트리온 뷰티몰의 디자인 시스템을 기반으로 마크업하였습니다.',
     techStack: ['HTML5', 'jQuery', 'SCSS', 'swiper.js', 'Bootstrap'],
+    rate: {
+      title: '모바일 페이지 구축',
+      num: '50',
+      desc: '셀트리온 뷰티몰의 메인, 서브페이지, 상세페이지 전체 구축',
+    },
     contributions: [
       {
         title: '모바일 반응형 페이지 마크업 및 구축',
@@ -425,6 +475,11 @@ export const projects = [
     overview:
       'SK에코플랜트의 근로자와 관리자가 현장을 관리할 수 있는 안전신고 플랫폼 앱입니다. 앱은 태블릿과 모바일 사이즈에 맞추어 제작되었으며, 관리자 페이지는 풀 반응형으로 사용자가 사용하는 기기에 맞추어 편리하게 이용할 수 있도록 하였습니다.',
     techStack: ['HTML5', 'jQuery', 'SCSS', 'swiper.js', 'Bootstrap', 'chart.js', 'fullCalendar.js'],
+    rate: {
+      title: '프론트 페이지, Admin 페이지 구축',
+      num: '100',
+      desc: '사용자와 관리자 화면 전체 구축',
+    },
     contributions: [
       {
         title: '프론트 앱 및 관리자 화면 구축',
@@ -475,6 +530,11 @@ export const projects = [
     overview:
       '제약회사 안국약품의 기존 웹사이트를 리뉴얼한 프로젝트입니다. 풀 반응형으로 제작되었으며, 기존의 개발 소스를 이용하여 페이지 디자인을 바꾸는 형식으로 진행되었습니다.',
     techStack: ['HTML5', 'jQuery', 'CSS', 'swiper.js', 'Bootstrap'],
+    rate: {
+      title: '서브 페이지 구축',
+      num: '80',
+      desc: '회사 소개, veus, rapid 등 서브 페이지 80% 이상 구축',
+    },
     contributions: [
       {
         title: '기존 개발 구조 분석 및 유지',
@@ -522,6 +582,11 @@ export const projects = [
     overview:
       '제약회사 안국약품의 기존 웹사이트를 리뉴얼한 프로젝트입니다. 풀 반응형으로 제작되었으며, 기존의 개발 소스를 이용하여 페이지 디자인을 바꾸는 형식으로 진행되었습니다. ',
     techStack: ['HTML5', 'jQuery', 'CSS', 'swiper.js', 'Bootstrap'],
+    rate: {
+      title: '서브 페이지 구축',
+      num: '80',
+      desc: '회사 소개, 제품 정보, 연구 개발, 채용 정보 등 서브 페이지 구축 담당 \n 이후 유지 보수 담당',
+    },
     contributions: [
       {
         title: '기존 개발 구조 분석 및 유지',
@@ -568,6 +633,11 @@ export const projects = [
     tags: ['HTML5', 'jQuery', 'CSS', 'swiper.js', 'Bootstrap'],
     overview: '안국약품의 건강기능식품 브랜드 에이원더의 쇼핑몰입니다. ',
     techStack: ['HTML5', 'jQuery', 'CSS', 'swiper.js', 'Bootstrap'],
+    rate: {
+      title: '웹 접근성 마크 취득',
+      num: '100',
+      desc: '제품 상세, 제품 홍보 등 서브 페이지 구축 \n 웹 접근성 마크 취득 100% 기여도 \n SEO 최적화 작업 100% 기여도 \n 이후 유지 보수 진행',
+    },
     contributions: [
       {
         title: '웹 접근성 개선 및 인증 획득',
@@ -614,6 +684,11 @@ export const projects = [
     tags: ['HTML5', 'jQuery', 'CSS', 'swiper.js', 'Bootstrap'],
     overview: '농기계 솔루션 기업 Daedong의 웹사이트를 제작하였습니다. ',
     techStack: ['HTML5', 'jQuery', 'CSS', 'swiper.js', 'Bootstrap'],
+    rate: {
+      title: '서브 페이지 구축',
+      num: '50',
+      desc: '100년 대동, 미래를 위한 혁신, 제품 상세 등 서브 페이지 구축 50% 이상',
+    },
     contributions: [
       {
         title: '서브페이지 퍼블리싱',
@@ -655,6 +730,11 @@ export const projects = [
     tags: ['HTML5', 'jQuery', 'CSS', 'swiper.js', 'Bootstrap', 'fullCalendar.js'],
     overview: '한국관광대학교의 메인 웹사이트를 리뉴얼하였습니다.',
     techStack: ['HTML5', 'jQuery', 'CSS', 'swiper.js', 'Bootstrap', 'fullCalendar.js'],
+    rate: {
+      title: '서브 페이지 구축',
+      num: '50',
+      desc: '대학 소개, 학사 안내, 한광 라이프, KTC 뉴스 하위 서브 페이지 50% 이상 구축',
+    },
     contributions: [
       {
         title: '서브페이지 퍼블리싱',
@@ -692,6 +772,11 @@ export const projects = [
     overview:
       '한국관광대학교 입학처의 웹사이트입니다. 풀반응형으로 제작되었으며, 수험생을 비롯한 입시 관계자가 어떤 환경에서도 편리하게 이용할 수 있도록 하였습니다.',
     techStack: ['HTML5', 'jQuery', 'CSS', 'swiper.js', 'Bootstrap', 'fullCalendar.js'],
+    rate: {
+      title: '서브 페이지 구축',
+      num: '50',
+      desc: '수시/정시모집안내, 전공심화, 학과 소개, 모집 학과 등 서브 페이지 구축 50% 이상 담당',
+    },
     contributions: [
       {
         title: '서브페이지 퍼블리싱',
@@ -733,6 +818,11 @@ export const projects = [
     tags: ['HTML5', 'jQuery', 'CSS'],
     overview: 'LG전자의 제품을 활용하는 프로모션 컨텐츠의 개별 페이지들을 퍼블리싱하였습니다. ',
     techStack: ['HTML5', 'jQuery', 'CSS'],
+    rate: {
+      title: '담당 페이지 구축',
+      num: '100%',
+      desc: '오브제 스타일, 올레드 TV, 광파 오븐, 워시 타워, 정수기, 버추얼 유튜버 김래아 등 담당 페이지 구축 100%',
+    },
     contributions: [
       {
         title: '프로모션 페이지 퍼블리싱',
