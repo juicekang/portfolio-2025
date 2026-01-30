@@ -25,6 +25,11 @@ export const projects = [
       '교사, 학생 템플릿 분리 구축',
     ],
     techStack: ['Vue3', 'CSS3', 'Sass', 'JavaScript', 'Git', 'Figma', 'Charts.js', 'Swiper.js'],
+    rate: {
+      title: '서비스 구축',
+      num: '50',
+      desc: '2024, 2025년도 AIDT 교사, 학생 서비스 50% 구축 \n 학습창 초기 디자인 컴포넌트 구축 \n 우리 반 수업, 학습 분석, 학급 관리, 학급 게시판, 실시간 미러링 구축',
+    },
     contributions: [
       {
         title: 'Vue.js 기반 SPA 구축',

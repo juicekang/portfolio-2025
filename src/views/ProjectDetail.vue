@@ -107,6 +107,34 @@
         <div class="container-fluid">
           <h2 class="section-title light">My Contributions</h2>
           <div class="contributions-list">
+            <!-- 기여도 -->
+            <div v-if="project.rate" class="contrib-card">
+              <div class="card-content">
+                <span class="num">Contribution Rate</span>
+                <h3 class="card-title">{{ project.rate.title }} {{ project.rate.num }}%</h3>
+                <p class="card-desc">
+                  {{ project.rate.desc }}
+                </p>
+              </div>
+              <div class="card-visual">
+                <div class="score-chart-wrap">
+                  <svg class="progress-ring" width="160" height="160" viewBox="0 0 100 100">
+                    <circle class="progress-ring-bg" cx="50" cy="50" r="45" />
+                    <circle
+                      class="progress-ring-bar"
+                      cx="50"
+                      cy="50"
+                      r="45"
+                      :style="getProgressStyle(project.rate.num)"
+                    />
+                  </svg>
+                  <div class="score-text">
+                    <span class="score">{{ project.rate.num }}</span>
+                    <span class="label">PERCENT</span>
+                  </div>
+                </div>
+              </div>
+            </div>
             <div
               v-for="(item, index) in project.contributions"
               :key="index"
@@ -246,7 +274,26 @@ const nextProject = computed(() => {
   // 다음 프로젝트 객체 반환
   return allProjects.value[nextIndex]
 })
+const chartRadius = 45 // 원의 반지름
+const chartCircumference = 2 * Math.PI * chartRadius // 원의 둘레 (약 282.7)
 
+// 점수(score)를 받아서 stroke-dashoffset 값을 계산하는 함수
+const getProgressStyle = (score) => {
+  // 점수가 문자열일 수 있으므로 숫자로 변환 (예외처리: 0~100 사이로 제한)
+  const numericScore = Math.min(Math.max(Number(score) || 0, 0), 100)
+
+  // 100점 만점 기준으로 진행률 계산 (예: 80점 -> 0.8)
+  const progress = numericScore / 100
+
+  // 전체 둘레에서 진행된 만큼을 뺀 나머지를 offset으로 설정
+  // (SVG stroke-dashoffset은 '비어있는 공간'의 길이를 의미함)
+  const offset = chartCircumference * (1 - progress)
+
+  return {
+    strokeDasharray: `${chartCircumference} ${chartCircumference}`,
+    strokeDashoffset: offset,
+  }
+}
 onMounted(() => loadProjectData(route.params.id))
 watch(
   () => route.params.id,
