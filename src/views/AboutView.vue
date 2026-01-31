@@ -13,7 +13,7 @@
           <div class="profile-image-wrap border-right">
             <div
               class="image-placeholder profile-img-effect"
-              style="background-image: url('/src/images/profile.jpg')"
+              style="background-image: url('/images/profile.jpg')"
             ></div>
           </div>
 
