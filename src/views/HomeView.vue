@@ -3,7 +3,7 @@
     <section class="hero-section">
       <div class="hero-container">
         <div class="logo-wrapper border-bottom" :class="{ loaded: isLoaded }">
-          <img src="/src/images/minjukang.svg" alt="MINJU KANG" class="main-logo-svg" />
+          <img src="/images/minjukang.svg" alt="MINJU KANG" class="main-logo-svg" />
           <h1 class="sr-only">MINJU KANG PORTFOLIO</h1>
         </div>
 
