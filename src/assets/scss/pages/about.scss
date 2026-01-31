@@ -1,0 +1,384 @@
+// about.scss
+.about-page {
+  & > section {
+    padding: $p-section;
+    @include tablet {
+      padding: 60px 0;
+    }
+  }
+}
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0;
+  @include tablet {
+    grid-template-columns: 1fr !important;
+  }
+}
+// --- Profile Section ---
+.profile-section {
+  padding: 0 !important;
+  .profile-grid {
+    display: grid;
+    grid-template-columns: 400px 1fr;
+    align-items: stretch;
+    @include tablet {
+      grid-template-columns: 1fr !important;
+    }
+  }
+  .profile-image-wrap {
+    @include tablet {
+      border-right: none;
+      border-bottom: 1px solid $c-bg-dark;
+    }
+  }
+  .profile-img-effect {
+    width: 100%;
+    height: 100%;
+    min-height: 500px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    @include tablet {
+      min-height: 400px;
+      background-position: 100% 20%;
+    }
+    .image-fallback {
+      color: #ccc;
+      font-weight: 700;
+      font-size: 2rem;
+    }
+  }
+
+  .profile-content {
+    display: flex;
+    flex-direction: column;
+    .profile-header {
+      padding: 40px;
+      @include tablet {
+        padding: 30px 0;
+      }
+    }
+  }
+
+  .profile-name {
+    font-size: 48px;
+    font-weight: 800;
+    color: $c-text-primary;
+    margin-bottom: 10px;
+    letter-spacing: -0.02em;
+  }
+
+  .profile-title {
+    font-size: 18px;
+    color: $c-text-secondary;
+    font-weight: 500;
+  }
+
+  .profile-info {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+
+  .info-row {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    align-items: center;
+    padding: 25px 40px;
+    @include tablet {
+      grid-template-columns: 100px 1fr;
+      padding: 20px 0;
+    }
+    .info-label {
+      @extend .section-heading-style;
+    }
+    .info-value {
+      font-size: 16px;
+      color: $c-text-secondary;
+      font-weight: 500;
+      transition: opacity 0.3s ease;
+      &:hover {
+        opacity: 0.6;
+      }
+    }
+  }
+}
+
+// --- Introduction Section ---
+.intro-section {
+  .intro-grid {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    gap: 0;
+    border-top: 1px solid $c-bg-dark;
+    @include tablet {
+      display: flex !important;
+      flex-direction: column;
+      border-top: 1px solid $c-bg-dark;
+    }
+  }
+
+  .intro-label-wrap {
+    padding-top: 40px;
+    @include tablet {
+      width: 100%;
+      border-right: none;
+      border-bottom: 1px solid $c-bg-dark;
+      padding: 20px 0;
+    }
+  }
+  .intro-content {
+    padding: 40px 0 0 60px;
+    max-width: 900px;
+    @include tablet {
+      padding: 30px 0 0 0 !important;
+      max-width: 100%;
+    }
+  }
+
+  .intro-text {
+    font-size: 18px;
+    line-height: 1.8;
+    color: $c-text-secondary;
+    font-weight: 400;
+    margin-bottom: 30px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+// --- Skills Section ---
+.skills-section {
+  .section-heading {
+    @extend .section-heading-style;
+    margin-bottom: 40px;
+  }
+
+  .skills-grid {
+    @extend .about-grid;
+  }
+
+  .skill-category {
+    padding: 50px 40px;
+    @include tablet {
+      border-right: none !important;
+      border-bottom: 1px solid $c-bg-dark;
+      padding: 30px 0;
+      border-top: none;
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+    .category-title {
+      font-size: 22px;
+      font-weight: 700;
+      color: $c-text-primary;
+      margin-bottom: 30px;
+    }
+    .skill-list {
+      li {
+        font-size: 16px;
+        line-height: 2.2;
+        color: $c-text-secondary;
+        padding-left: 20px;
+        position: relative;
+        font-weight: 500;
+        &::before {
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 12px;
+          width: 8px;
+          height: 1px;
+          background-color: $c-bg-dark;
+        }
+      }
+    }
+  }
+}
+
+// --- Experience Section ---
+.experience-section {
+  .section-heading {
+    @extend .section-heading-style;
+    margin-bottom: 40px;
+  }
+
+  .timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  .timeline-item {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    gap: 0;
+    @include tablet {
+      display: flex !important;
+      flex-direction: column;
+    }
+  }
+
+  .timeline-date-wrap {
+    padding: 40px 40px 40px 0;
+    @include tablet {
+      border-right: none;
+      padding: 20px 0 10px 0;
+      border-bottom: 1px solid $c-line-weak;
+      margin-bottom: 20px;
+    }
+  }
+  .timeline-date {
+    font-size: 16px;
+    font-weight: 700;
+    color: $c-text-primary;
+  }
+
+  .timeline-content {
+    padding: 40px 0 40px 60px;
+    @include tablet {
+      padding: 0 0 40px 0;
+    }
+    .timeline-title {
+      font-size: 26px;
+      font-weight: 700;
+      color: $c-text-primary;
+      margin-bottom: 8px;
+    }
+    .timeline-company {
+      font-size: 16px;
+      color: $c-text-tertiary;
+      margin-bottom: 24px;
+      font-weight: 500;
+    }
+    .timeline-description {
+      li {
+        font-size: 16px;
+        line-height: 1.8;
+        color: $c-text-secondary;
+        padding-left: 20px;
+        position: relative;
+        margin-bottom: 8px;
+        font-weight: 400;
+        &::before {
+          content: '•';
+          position: absolute;
+          left: 0;
+          color: $c-text-primary;
+        }
+      }
+    }
+  }
+}
+
+// --- Education Section ---
+.education-section {
+  .education-grid {
+    @extend .about-grid;
+    border-bottom: 1px solid $c-bg-dark;
+    @include tablet {
+      border-bottom: none;
+    }
+  }
+
+  .education-col {
+    padding: 40px 40px 40px 0;
+    @include tablet {
+      border-right: none;
+      border-bottom: 1px solid $c-bg-dark;
+    }
+    &:last-child {
+      padding-left: 40px;
+      padding-right: 0;
+      @include tablet {
+        padding-left: 0;
+        border-bottom: 1px solid $c-bg-dark;
+      }
+    }
+    .section-heading {
+      @extend .section-heading-style;
+      margin-bottom: 30px;
+    }
+  }
+
+  .education-item,
+  .certificate-item {
+    padding: 20px 0;
+    .education-year,
+    .certificate-year {
+      font-size: 14px;
+      font-weight: 600;
+      color: $c-text-tertiary;
+      margin-bottom: 8px;
+    }
+    .education-title {
+      font-size: 22px;
+      font-weight: 700;
+      color: $c-text-primary;
+      margin-bottom: 6px;
+    }
+    .education-major,
+    .certificate-name {
+      font-size: 16px;
+      color: $c-text-secondary;
+      font-weight: 500;
+    }
+  }
+}
+
+// --- CTA Section ---
+.cta-section {
+  padding: 160px 0;
+  background: #000;
+  color: #fff;
+  .container-fluid {
+    text-align: center;
+  }
+
+  .cta-title {
+    font-size: clamp(40px, 5vw, 60px);
+    font-weight: 800;
+    margin-bottom: 24px;
+    //text-transform: uppercase;
+    letter-spacing: -0.02em;
+  }
+  .cta-description {
+    font-size: 18px;
+    color: #999;
+    margin-bottom: 60px;
+  }
+  .cta-links {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+  }
+
+  .cta-button {
+    padding: 20px 50px;
+    font-size: 14px;
+    font-weight: 700;
+    //text-transform: uppercase;
+    border-radius: 0;
+    transition: all 0.3s ease;
+    &.primary {
+      background: #fff;
+      color: #000;
+      border: 1px solid #fff;
+      &:hover {
+        background: #000;
+        color: #fff;
+      }
+    }
+    &.secondary {
+      background: transparent;
+      color: #fff;
+      border: 1px solid #fff;
+      &:hover {
+        background: #fff;
+        color: #000;
+      }
+    }
+  }
+}

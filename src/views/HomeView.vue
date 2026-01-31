@@ -1,73 +1,114 @@
-<script setup>
-// import TheWelcome from '../components/TheWelcome.vue'
-</script>
-
 <template>
-  <main>
-    <section class="section-main">
-      <div class="container">
-        <div class="main-title">
-          <!-- <h1>UI/UX DEVEL{}PE</h1>
-          <p>Portfolio</p> -->
-          <h1>Bienvenue!</h1>
+  <main class="main-page">
+    <section class="hero-section">
+      <div class="hero-container">
+        <div class="logo-wrapper border-bottom" :class="{ loaded: isLoaded }">
+          <img src="/src/images/minjukang.svg" alt="MINJU KANG" class="main-logo-svg" />
+          <h1 class="sr-only">MINJU KANG PORTFOLIO</h1>
         </div>
-        <div class="main-foot">
-          <dl>
-            <dt>KANG MINJU</dt>
-            <dd>juicexoffee@gmail.com</dd>
-          </dl>
-          <p>UI/UX Development Portfolio</p>
-        </div>
-      </div>
-    </section>
-    <section class="section-about">
-      <div class="container">
-        <h2 class="section-title">{ About Me }</h2>
-        <div class="row-container">
-          <div class="about-row">
-          <div class="profile">
-            <div class="profile-img">
 
+        <div class="hero-grid">
+          <div class="grid-col statement-col border-right" :class="{ loaded: isLoaded }">
+            <div class="statement-label">I AM A</div>
+            <div class="typewriter-wrapper">
+              <span class="typewriter-text">{{ displayedText }}</span>
+              <span class="cursor" :class="{ blinking: !isDeleting }"></span>
             </div>
-            <dl>
-              <dt>강민주 / KANG MINJU</dt>
-              <dd>1992.11.04</dd>
-              <dd>juicexoffee@gmail.com</dd>
-            </dl>
+            <div class="statement-static">BASED IN SEOUL.</div>
           </div>
-          <div class="desc">
-            <dl>
-              <dt>CHARACTER</dt>
-              <dd>안녕하세요</dd>
-            </dl>
-            <dl>
-              <dt>EDUCATION</dt>
-              <dd>안녕하세요</dd>
-            </dl>
-            <dl>
-              <dt>EXPERIENCES</dt>
-              <dd>안녕하세요</dd>
-            </dl>
-            <dl>
-              <dt>SKILLS</dt>
-              <dd>안녕하세요</dd>
-            </dl>
+
+          <div class="grid-col meta-col" :class="{ loaded: isLoaded }">
+            <div class="meta-row border-bottom">
+              <span class="label">ROLE</span>
+              <span class="value">UI/UX DEVELOPER<br />WEB PUBLISHER</span>
+            </div>
+            <div class="meta-row border-bottom">
+              <span class="label">STATUS</span>
+              <span class="value available">● AVAILABLE FOR WORK</span>
+            </div>
+            <div class="meta-row scroll-trigger-row">
+              <div class="spin-badge">
+                <svg viewBox="0 0 100 100" width="100" height="100">
+                  <defs>
+                    <path
+                      id="circle"
+                      d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0"
+                    />
+                  </defs>
+                  <text font-size="11.5">
+                    <textPath xlink:href="#circle">SCROLL DOWN • VIEW PROJECTS •</textPath>
+                  </text>
+                </svg>
+                <div class="arrow">↓</div>
+              </div>
+            </div>
           </div>
         </div>
+      </div>
+      <div class="marquee-wrapper border-top border-bottom" :class="{ loaded: isLoaded }">
+        <div class="marquee-track">
+          <span v-for="n in 4" :key="n" class="marquee-item">
+            HTML5 • CSS3 • JAVASCRIPT • VUE.JS • INTERACTIVE WEB • ACCESSIBILITY •
+          </span>
         </div>
-        
       </div>
     </section>
-    <section class="section-works">
-      <div class="container">
-        <h2 class="section-title" style="text-align: right;">{ Works }</h2>
-        <p class="page-description">지금까지 작업했던 프로젝트들을 소개합니다</p>
-        <Works />
-      </div>
-      
+
+    <section class="section-works container-fluid">
+      <Works />
     </section>
   </main>
 </template>
-<script>
-import Works from '@/views/Projects.vue'
+
+<script setup>
+import { ref, onMounted, onUnmounted } from 'vue'
+import Works from '@/views/Projects.vue' // 경로 확인 필요
+
+// --- Typewriter Logic ---
+const phrases = ['WEB PUBLISHER', 'UI DEVELOPER', 'CREATIVE CODER', 'PROBLEM SOLVER']
+const currentPhraseIndex = ref(0)
+const displayedText = ref('')
+const isDeleting = ref(false)
+const typingSpeed = 100
+const deletingSpeed = 50
+const pauseTime = 2000
+let loopTimeout = null
+
+// --- Animation State ---
+const isLoaded = ref(false)
+
+const handleType = () => {
+  const currentPhrase = phrases[currentPhraseIndex.value]
+
+  if (isDeleting.value) {
+    if (displayedText.value.length > 0) {
+      displayedText.value = currentPhrase.substring(0, displayedText.value.length - 1)
+      loopTimeout = setTimeout(handleType, deletingSpeed)
+    } else {
+      isDeleting.value = false
+      currentPhraseIndex.value = (currentPhraseIndex.value + 1) % phrases.length
+      loopTimeout = setTimeout(handleType, typingSpeed + 50)
+    }
+  } else {
+    if (displayedText.value.length < currentPhrase.length) {
+      displayedText.value = currentPhrase.substring(0, displayedText.value.length + 1)
+      loopTimeout = setTimeout(handleType, typingSpeed)
+    } else {
+      isDeleting.value = true
+      loopTimeout = setTimeout(handleType, pauseTime)
+    }
+  }
+}
+
+onMounted(() => {
+  handleType()
+  // 화면 로드 후 애니메이션 트리거
+  setTimeout(() => {
+    isLoaded.value = true
+  }, 100)
+})
+
+onUnmounted(() => {
+  if (loopTimeout) clearTimeout(loopTimeout)
+})
 </script>

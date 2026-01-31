@@ -1,90 +1,193 @@
 // .font-eng{
 //     font-family: "Archivo Black", sans-serif;
 // }
+html,
+body {
+  width: 100%;
+  height: 100%;
+  font-family: 'DM Sans', 'Pretendard', sans-serif;
+  font-size: 10px;
+  line-height: 1.2;
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
 //main
-
-main{
-    > section{
-        height: 100vh;
-        .container{
-            height: 100%;
-            padding: 5rem;
-        }
-        .section-title{
-            font-weight: 700;
-            font-size: 10rem;
-        }
-    }
-    .section{
-        &-main{
-            .container{
-                padding: 5rem;
-                display: flex;
-                flex-direction: column;
-            }
-            .main-title{
-                font-size: 12rem;
-                *{
-                    font-weight: 700;
-                }
-            }
-            .main-foot{
-                display: flex;
-                align-items: flex-end;
-                justify-content: space-between;
-                font-size: 2rem;
-                margin-top: auto;
-            }
-        }
-        &-about{
-            color: #fff;
-            background-color: black;
-            .container{
-                display: flex;
-                flex-direction: column;
-                padding: 8rem 5rem;
-            }
-            
-            .row-container{
-                flex-grow: 1;
-                display: flex;
-                align-items: center;
-            }
-            .about-row{
-                display: flex;
-                width: 100%;
-                .profile{
-                    font-size: 1.8rem;
-                    &-img{
-                        width: 25rem;
-                        height: 28rem;
-                        background-color: #ddd;
-                        margin-bottom: 2rem;
-                    }
-                }
-                .desc{
-                    display: flex;
-                    flex: 1;
-                    flex-wrap: wrap;
-                    margin-left: 10rem;
-                    dl{
-                        flex:1 0 50%;
-                        font-size: 1.6rem;
-                        dt{
-                            font-size: 1.8rem;
-                            font-weight: 600;
-                            margin-bottom: 1rem;
-                        }
-                        dd{
-                            color: #eee;
-                        }
-                    }
-                }
-            }
-        }
-        // &-works{
-
-        // }
-    }
+#app {
+  background-color: #fff;
+  color: #000;
+}
+header {
+  height: 6.2rem;
+  // border-bottom: 1px solid;
+  padding-top: 2rem;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 90001;
+  transform: translateZ(0);
+  height: 62px;
+  mix-blend-mode: difference;
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: -0.25px;
+  .container-fluid {
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+  .gnb li a:hover {
+    text-decoration: underline;
+  }
 }
 
+// --- Common Utilities ---
+.container {
+  max-width: $max-width;
+  margin: 0 auto;
+  padding: 0 $p-container;
+  @include mobile {
+    padding: 0 $p-container-m;
+  }
+}
+
+.container-fluid {
+  max-width: $max-width-wide;
+  margin: 0 auto;
+  padding: 0 $p-container;
+  @include tablet {
+    padding: 0 $p-container-m !important;
+  }
+}
+
+// Backgrounds
+.white-bg {
+  background: $c-bg-white;
+}
+.gray-bg {
+  background: $c-bg-gray;
+}
+.dark-bg {
+  background: $c-bg-dark;
+  color: $c-bg-white;
+}
+
+//  Borders (공통 사용)
+.border-bottom {
+  border-bottom: 1px solid $c-bg-dark;
+}
+.border-top {
+  border-top: 1px solid $c-bg-dark;
+}
+.border-right {
+  border-right: 1px solid $c-bg-dark;
+}
+
+// --- Typography ---
+.section-heading-style {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: $c-text-primary;
+}
+
+.section-title {
+  font-size: 32px;
+  font-weight: 800;
+  //text-transform: uppercase;
+  margin-bottom: 40px;
+  letter-spacing: -0.02em;
+  &.light {
+    color: $c-bg-white;
+  }
+}
+
+.section-title-s {
+  font-size: 24px;
+  font-weight: 800;
+  border-top: 4px solid $c-text-primary;
+  padding-top: 20px;
+  display: inline-block;
+}
+
+// --- sub hero section
+
+// --- Common Component: Loading Screen ---
+.loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: $c-bg-white;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .loader-bar {
+    width: 40px;
+    height: 4px;
+    background: $c-text-primary;
+    animation: pulse 1s infinite;
+  }
+}
+@keyframes pulse {
+  0%,
+  100% {
+    width: 40px;
+  }
+  50% {
+    width: 80px;
+  }
+}
+
+// --- Common Component: Text Hero (About & Project List) ---
+// Detail 페이지의 Hero는 스타일이 달라서 별도 파일에 둡니다.
+.text-hero-section {
+  padding: 160px 0 100px;
+  border-bottom: 1px solid $c-bg-dark;
+  @include mobile {
+    padding: 120px 0 60px;
+  }
+  .hero-container {
+    max-width: $max-width-wide; // List 페이지는 1400px이므로 개별 오버라이딩 가능
+    margin: 0 auto;
+    padding: 0 $p-container;
+    @include tablet {
+      padding: 0 $p-container-m !important;
+    }
+  }
+
+  .hero-label {
+    @extend .section-heading-style;
+    margin-bottom: 40px;
+    color: $c-text-tertiary;
+  }
+
+  .hero-title {
+    font-size: clamp(40px, 8vw, 100px); // clamp 조정
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -0.03em;
+    color: $c-text-primary;
+    @include mobile {
+      font-size: 14vw;
+    }
+    sup {
+      font-size: 0.4em;
+      vertical-align: top;
+      margin-left: 10px;
+    }
+  }
+}
