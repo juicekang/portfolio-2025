@@ -41,6 +41,7 @@
     background-repeat: no-repeat;
     @include tablet {
       min-height: 400px;
+      background-position: 100% 20%;
     }
     .image-fallback {
       color: #ccc;

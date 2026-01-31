@@ -175,6 +175,12 @@
 
           <div class="education-col">
             <h2 class="section-heading">Certificates</h2>
+            <div class="education-list border-top">
+              <div class="education-item border-bottom">
+                <div class="education-year">2020</div>
+                <h3 class="education-title">UI.UX 디자인 & 웹퍼블리셔 교육 과정 이수</h3>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -182,11 +188,11 @@
 
     <section class="cta-section" data-aos="fade-up">
       <div class="container-fluid">
-        <h2 class="cta-title">Let's Work Together</h2>
-        <p class="cta-description">새로운 프로젝트나 협업 기회에 대해 언제든 연락 주세요</p>
+        <h2 class="cta-title">저와 함께 일해요!</h2>
+        <p class="cta-description">Work hard, communicate well, and enjoy the ride.</p>
         <div class="cta-links">
-          <a href="mailto:juicexoffee@gmail.com" class="cta-button primary"> Get in Touch </a>
-          <a href="/resume.pdf" download class="cta-button secondary"> Download Resume </a>
+          <a href="mailto:juicexoffee@gmail.com" class="cta-button primary"> 메일 보내기 </a>
+          <!-- <a href="/resume.pdf" download class="cta-button secondary"> 이력서 다운 </a> -->
         </div>
       </div>
     </section>

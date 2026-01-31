@@ -45,7 +45,7 @@
     </div>
 
     <div class="works-footer" :class="{ 'in-view': footerInView }" ref="footerRef">
-      <button class="more-btn" @click="goToProjectsList">ALL PROJECTS ↗</button>
+      <router-link to="/projects" class="more-btn">ALL PROJECTS ↗</router-link>
     </div>
   </section>
 </template>
@@ -116,7 +116,4 @@ const getLayoutClass = (index) => {
 }
 
 const goToDetail = (id) => router.push({ name: 'project-detail', params: { id } })
-const goToProjectsList = () => router.push({ name: 'projects' })
 </script>
-
-<style lang="scss" scoped></style>
