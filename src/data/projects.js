@@ -492,7 +492,7 @@ export const projects = [
           '안전사고 데이터를 차트 형태로 시각화하기 위해 Chart.js를 적용해 사용자들이 데이터를 직관적으로 확인할 수 있도록 구성했습니다.',
       },
       {
-        title: '캘린더 기반 출퇴근 및 사고 관리 기능 개발',
+        title: '캘린더 기반 출퇴근 및 사고 관리 기능 구현',
         description:
           'FullCalendar.js를 사용해 출퇴근 기록 및 사고 정보를 캘린더에서 바로 확인할 수 있도록 기능을 구현했습니다.',
       },
@@ -631,7 +631,8 @@ export const projects = [
     role: '퍼블리셔',
     teamSize: '디자이너 4명, 퍼블리셔 5명, 개발 3명',
     tags: ['HTML5', 'jQuery', 'CSS', 'swiper.js', 'Bootstrap'],
-    overview: '안국약품의 건강기능식품 브랜드 에이원더의 쇼핑몰입니다. ',
+    overview:
+      '안국약품의 건강기능식품 브랜드 에이원더의 쇼핑몰을 구축하고, 웹접근성 인증 마크를 취득하였습니다. 상세, 홍보 페이지 등 서브페이지를 퍼블리싱하였으며 이후 사용자에게 동일한 환경을 제공할 수 있도록 웹접근성 인증을 받고, SEO 작업을 진행하였습니다.',
     techStack: ['HTML5', 'jQuery', 'CSS', 'swiper.js', 'Bootstrap'],
     rate: {
       title: '웹 접근성 마크 취득',

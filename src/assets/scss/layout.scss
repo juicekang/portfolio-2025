@@ -22,8 +22,8 @@ body {
 }
 //main
 #app {
-  background-color: #fff;
-  color: #000;
+  background-color: $c-bg-white;
+  color: $c-bg-dark;
 }
 header {
   height: 6.2rem;
@@ -37,7 +37,7 @@ header {
   transform: translateZ(0);
   height: 62px;
   mix-blend-mode: difference;
-  color: #fff;
+  color: $c-bg-white;
   font-size: 1.2rem;
   font-weight: 700;
   letter-spacing: -0.25px;

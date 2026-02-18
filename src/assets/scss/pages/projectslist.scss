@@ -81,17 +81,17 @@
       transition: opacity 0.3s ease;
 
       .view-detail {
-        color: #fff;
+        color: $c-bg-white;
         font-size: 14px;
         font-weight: 600;
         padding: 12px 24px;
-        border: 1px solid #fff;
+        border: 1px solid $c-bg-white;
         //text-transform: uppercase;
         letter-spacing: 1px;
         background: rgba(0, 0, 0, 0.5);
         &:hover {
-          background: #fff;
-          color: #000;
+          background: $c-bg-white;
+          color: $c-bg-dark;
         }
       }
     }
@@ -124,7 +124,7 @@
         font-size: 12px;
         //color: $c-text-sub;
         font-weight: 500;
-        border: 1px solid #eee;
+        border: 1px solid $c-line-weak;
         padding: 2px 8px;
       }
     }
@@ -153,7 +153,7 @@
       gap: 8px;
       .tag {
         font-size: 12px;
-        color: #999;
+        color: $c-text-tertiary;
         font-weight: 500;
       }
     }
@@ -183,7 +183,7 @@
     padding: 100px 0;
     text-align: center;
     font-size: 18px;
-    color: #999;
+    color: $c-text-tertiary;
     border-bottom: 1px solid $c-bg-dark;
   }
 }

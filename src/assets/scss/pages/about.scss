@@ -347,8 +347,8 @@
 // --- CTA Section ---
 .cta-section {
   padding: 160px 0;
-  background: #000;
-  color: #fff;
+  background: $c-bg-dark;
+  color: $c-bg-white;
   .container-fluid {
     text-align: center;
   }
@@ -362,7 +362,7 @@
   }
   .cta-description {
     font-size: 18px;
-    color: #999;
+    color: $c-text-tertiary;
     margin-bottom: 60px;
   }
   .cta-links {
@@ -379,21 +379,21 @@
     border-radius: 0;
     transition: all 0.3s ease;
     &.primary {
-      background: #fff;
-      color: #000;
-      border: 1px solid #fff;
+      background: $c-bg-white;
+      color: $c-bg-dark;
+      border: 1px solid $c-bg-white;
       &:hover {
-        background: #000;
-        color: #fff;
+        background: $c-bg-dark;
+        color: $c-bg-white;
       }
     }
     &.secondary {
       background: transparent;
-      color: #fff;
-      border: 1px solid #fff;
+      color: $c-bg-white;
+      border: 1px solid $c-bg-white;
       &:hover {
-        background: #fff;
-        color: #000;
+        background: $c-bg-white;
+        color: $c-bg-dark;
       }
     }
   }

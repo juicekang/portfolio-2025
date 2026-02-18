@@ -47,14 +47,14 @@
         .back-link {
           background: rgba(255, 255, 255, 0.2);
           border: 1px solid rgba(255, 255, 255, 0.4);
-          color: #fff;
+          color: $c-bg-white;
           padding: 8px 20px;
           border-radius: 30px;
           cursor: pointer;
           backdrop-filter: blur(4px);
           &:hover {
-            background: #fff;
-            color: #000;
+            background: $c-bg-white;
+            color: $c-bg-dark;
           }
         }
       }
@@ -83,7 +83,7 @@
   background: $c-bg-dark;
   color: $c-bg-white;
   padding: 40px 0;
-  border-bottom: 1px solid #333;
+  border-bottom: 1px solid $c-text-secondary;
   .meta-container {
     @extend .container;
     display: flex;
@@ -100,7 +100,7 @@
     flex-direction: column;
     .label {
       font-size: 11px;
-      color: #888;
+      color: $c-text-tertiary;
       margin-bottom: 8px;
       font-weight: 700;
       letter-spacing: 0.05em;
@@ -115,8 +115,8 @@
       align-items: center;
       .link-btn {
         padding: 8px 16px;
-        background: #fff;
-        color: #000;
+        background: $c-bg-white;
+        color: $c-bg-dark;
         text-decoration: none;
         font-weight: 700;
         font-size: 13px;
@@ -148,14 +148,14 @@
       font-size: 14px;
       font-weight: 600;
       padding: 10px 20px;
-      border: 1px solid #000;
-      background: #fff;
-      color: #000;
+      border: 1px solid $c-bg-dark;
+      background: $c-bg-white;
+      color: $c-bg-dark;
       border-radius: 0;
       transition: all 0.3s;
       &:hover {
-        background: #000;
-        color: #fff;
+        background: $c-bg-dark;
+        color: $c-bg-white;
       }
     }
   }
@@ -208,7 +208,7 @@
         grid-template-columns: 1fr;
       }
       .feature-card {
-        border-top: 1px solid #000;
+        border-top: 1px solid $c-bg-dark;
         padding-top: 20px;
         .f-num {
           display: block;
@@ -233,13 +233,13 @@
   .contrib-card {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    border-bottom: 1px solid #333;
+    border-bottom: 1px solid $c-text-secondary;
     min-height: 400px;
     @include tablet {
       grid-template-columns: 1fr; // 1열로 변경
     }
     &:first-child {
-      border-top: 1px solid #333;
+      border-top: 1px solid $c-text-secondary;
     }
 
     // 컨텐츠 영역
@@ -248,15 +248,15 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      border-right: 1px solid #333; // 중앙 선
+      border-right: 1px solid $c-text-secondary; // 중앙 선
       @include tablet {
         padding: 40px 0;
         border-right: none;
-        border-bottom: 1px solid #333;
+        border-bottom: 1px solid $c-text-secondary;
       }
       .num {
         font-size: 14px;
-        color: #666;
+        color: $c-text-tertiary;
         margin-bottom: 20px;
         display: block;
       }
@@ -282,11 +282,11 @@
         span {
           display: inline-block;
           font-size: 12px;
-          border: 1px solid #555;
+          border: 1px solid $c-text-tertiary;
           padding: 6px 12px;
           margin-right: 8px;
           border-radius: 20px;
-          color: #999;
+          color: $c-text-tertiary;
         }
       }
     }
@@ -297,7 +297,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background: #1a1a1a;
+      background: $c-bg-dark;
       transition: background 0.3s;
       @include tablet {
         padding: 40px 0;
@@ -323,7 +323,7 @@
         }
 
         .progress-ring-bg {
-          stroke: #333; // 회색 배경 원 색상 (어두운 테마에 맞춤)
+          stroke: $c-text-secondary; // 회색 배경 원 색상 (어두운 테마에 맞춤)
         }
 
         .progress-ring-bar {
@@ -343,7 +343,7 @@
         .score {
           font-size: 50px;
           font-weight: 800;
-          color: #fff;
+          color: $c-bg-white;
           line-height: 1;
         }
         .label {
@@ -360,14 +360,14 @@
   .contributions-list {
     display: grid;
     grid-template-columns: 1fr;
-    border-top: 1px solid #333;
+    border-top: 1px solid $c-text-secondary;
   }
   .contribution-row {
     display: grid;
     grid-template-columns: 300px 1fr;
     gap: 40px;
     padding: 40px 0;
-    border-bottom: 1px solid #333;
+    border-bottom: 1px solid $c-text-secondary;
     @include tablet {
       grid-template-columns: 1fr;
       gap: 15px;
@@ -382,7 +382,7 @@
       .c-title {
         font-size: 18px;
         font-weight: 700;
-        color: #fff;
+        color: $c-bg-white;
       }
     }
     .c-desc {
@@ -415,7 +415,7 @@
       text-align: right;
       .img-num {
         font-size: 12px;
-        color: #999;
+        color: $c-text-tertiary;
         font-weight: 700;
       }
     }
@@ -434,7 +434,7 @@
     }
   }
   .process-card {
-    background: #fff;
+    background: $c-bg-white;
     padding: 40px;
     border: 1px solid $c-line-weak;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
@@ -450,7 +450,7 @@
       }
       .card-num {
         font-size: 12px;
-        color: #999;
+        color: $c-text-tertiary;
         font-weight: 700;
       }
       .card-title {
@@ -477,7 +477,7 @@
       p {
         font-size: 15px;
         line-height: 1.6;
-        color: #444;
+        color: $c-text-secondary;
         margin-bottom: 20px;
       }
     }
@@ -503,12 +503,12 @@
         display: block;
         font-size: 48px;
         font-weight: 800;
-        color: #000;
+        color: $c-bg-dark;
         margin-bottom: 5px;
       }
       .r-label {
         font-size: 14px;
-        color: #666;
+        color: $c-text-tertiary;
         //text-transform: uppercase;
         letter-spacing: 0.1em;
       }
@@ -518,11 +518,11 @@
 
 // --- Next Nav ---
 .next-nav {
-  border-top: 1px solid #000;
+  border-top: 1px solid $c-bg-dark;
   .next-btn {
     width: 100%;
     padding: 120px 0;
-    background: #fff;
+    background: $c-bg-white;
     border: none;
     cursor: pointer;
     display: flex;
@@ -535,14 +535,14 @@
     }
     .sub {
       font-size: 14px;
-      color: #999;
+      color: $c-text-tertiary;
       font-weight: 700;
       //text-transform: uppercase;
     }
     .main {
       font-size: 40px;
       font-weight: 800;
-      color: #000;
+      color: $c-bg-dark;
       @include tablet {
         font-size: 25px;
       }
