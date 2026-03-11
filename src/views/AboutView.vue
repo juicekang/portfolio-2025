@@ -38,7 +38,7 @@
               </div>
               <div class="info-row">
                 <span class="info-label">Experience</span>
-                <span class="info-value">5년 4개월</span>
+                <span class="info-value">5 years +</span>
               </div>
             </div>
           </div>
@@ -54,19 +54,20 @@
           </div>
           <div class="intro-content">
             <p class="intro-text">
-              5년차 웹 퍼블리셔로서 웹접근성과 사용자 경험을 최우선으로 생각하며, 탄탄한 마크업
-              전문성을 바탕으로 고품질의 UI를 구현합니다. 웹접근성 품질인증마크 획득 경험을 통해
-              모든 사용자를 고려한 시맨틱 마크업의 중요성을 깊이 이해하고 있으며, SEO 최적화와
-              크로스 브라우징까지 꼼꼼하게 대응합니다.
+              웹 접근성과 사용자 경험을 중심으로 UI를 구현하는 Frontend Developer입니다. 5년 이상의
+              웹 퍼블리싱 경험을 바탕으로 시맨틱 마크업, SEO 최적화, 크로스 브라우징을 고려한
+              안정적인 UI를 구현해왔습니다. 특히 웹접근성 품질인증마크 획득 프로젝트에 참여하며 모든
+              사용자를 고려한 마크업 구조와 접근성 설계의 중요성을 깊이 이해하게 되었습니다.
             </p>
             <p class="intro-text">
-              기획자, 디자이너, 개발자 사이의 가교 역할을 하며 프로젝트를 성공적으로 완수하는 것을
-              강점으로 합니다. 작은 마크업 구조와 인터랙션 차이가 사용자 경험에 큰 영향을 미친다고
-              믿으며, 세부적인 부분까지 꼼꼼하게 점검하는 태도로 완성도 높은 결과물을 만들어냅니다.
-              현재는 Vue 3 기반 화면 단 개발 역량을 바탕으로, 사이드 프로젝트를 통해 API 연동, 상태
-              관리(Pinia), TypeScript 등 프론트엔드 전반의 기술을 학습하며 지속적으로 성장하고
-              있습니다. 마크업 전문성과 프론트엔드 개발 경험을 결합하여, 사용자에게 더 나은 경험을
-              제공하는 것을 목표로 합니다.
+              Vue 3 기반 프로젝트 경험을 통해 컴포넌트 구조를 활용한 UI 개발을 수행해왔으며,
+              기획자·디자이너·개발자 사이에서 UI 구현 관점의 커뮤니케이션을 조율하는 역할을 맡아
+              프로젝트 완성도를 높여왔습니다. 최근에는 사이드 프로젝트를 통해 API 연동, 상태
+              관리(Pinia), TypeScript 등을 적용하며 프론트엔드 개발 역량을 확장하고 있습니다.
+            </p>
+            <p class="intro-text">
+              탄탄한 마크업 전문성과 프론트엔드 기술을 결합하여 사용자 경험을 세밀하게 설계하고
+              구현하는 개발자가 되는 것을 목표로 합니다.
             </p>
           </div>
         </div>
@@ -80,45 +81,46 @@
         <div class="skills-grid-wrap border-top border-bottom">
           <div class="skills-grid">
             <div class="skill-category border-right">
-              <h3 class="category-title">Markup & Styling</h3>
-              <ul class="skill-list">
-                <li>HTML5, 시맨틱 마크업</li>
-                <li>CSS3, Sass/SCSS</li>
-                <li>반응형 & 적응형 웹 디자인</li>
-                <li>CSS Grid, Flexbox</li>
-                <li>Tailwind CSS</li>
-              </ul>
+              <h3 class="category-title">Core Tech Stack</h3>
+              <div class="skill-tags">
+                <span class="skill-item core-skill">Vue 3 (Composition API)</span>
+                <span class="skill-item core-skill">TypeScript</span>
+                <span class="skill-item core-skill">Node.js</span>
+                <span class="skill-item core-skill">Nuxt.js</span>
+                <span class="skill-item core-skill">Vite</span>
+                <span class="skill-item">JavaScript (ES6+)</span>
+              </div>
             </div>
 
             <div class="skill-category">
-              <h3 class="category-title">JavaScript & Frameworks</h3>
-              <ul class="skill-list">
-                <li>JavaScript (ES6+)</li>
-                <li>Vue.js</li>
-                <li>jQuery</li>
-                <li>Vite</li>
-                <li>npm</li>
-              </ul>
+              <h3 class="category-title">UI & Styling</h3>
+              <div class="skill-tags">
+                <span class="skill-item">HTML5 / Semantic Markup</span>
+                <span class="skill-item">Sass/SCSS</span>
+                <span class="skill-item">Tailwind CSS</span>
+                <span class="skill-item">CSS Grid / Flexbox</span>
+                <span class="skill-item">Responsive Web</span>
+              </div>
             </div>
 
             <div class="skill-category border-top border-right">
-              <h3 class="category-title">Accessibility & Optimization</h3>
-              <ul class="skill-list">
-                <li>웹 접근성 준수 (WCAG 2.1)</li>
-                <li>크로스 브라우징 호환성</li>
-                <li>검색 엔진 최적화 (SEO)</li>
-                <li>웹 성능 최적화</li>
-              </ul>
+              <h3 class="category-title">Architecture & Optimization</h3>
+              <div class="skill-tags">
+                <span class="skill-item">State Management (Pinia/Vuex)</span>
+                <span class="skill-item">Web Accessibility (WCAG 2.1)</span>
+                <span class="skill-item">SEO / Web Vitals Optimization</span>
+                <span class="skill-item">Cross-Browsing</span>
+              </div>
             </div>
 
             <div class="skill-category border-top">
-              <h3 class="category-title">Tools & Collaboration</h3>
-              <ul class="skill-list">
-                <li>Git, GitHub</li>
-                <li>Figma, Zeplin</li>
-                <li>VS Code</li>
-                <li>Jira, Notion</li>
-              </ul>
+              <h3 class="category-title">Tools & Environment</h3>
+              <div class="skill-tags">
+                <span class="skill-item">Git / GitHub Flow</span>
+                <span class="skill-item">npm / yarn</span>
+                <span class="skill-item">Figma / Zeplin</span>
+                <span class="skill-item">Jira / Notion</span>
+              </div>
             </div>
           </div>
         </div>
@@ -166,25 +168,23 @@
 
     <section class="education-section border-bottom" data-aos="fade-up">
       <div class="container-fluid">
-        <div class="education-grid">
-          <div class="education-col border-right">
-            <h2 class="section-heading">Education</h2>
-            <div class="education-list border-top">
-              <div class="education-item border-bottom">
-                <div class="education-year">2011 – 2016</div>
-                <h3 class="education-title">성신여자대학교</h3>
-                <p class="education-major">국어국문학 전공 / 컴퓨터소프트웨어학 부전공</p>
-              </div>
+        <h2 class="section-heading">Education & Certificates</h2>
+
+        <div class="edu-list-wrap border-top">
+          <div class="edu-list-item border-bottom">
+            <div class="edu-type">Education</div>
+            <div class="edu-date">2011.03 – 2016.02</div>
+            <div class="edu-info">
+              <h3 class="edu-name">성신여자대학교</h3>
+              <p class="edu-major">국어국문학 전공 / 컴퓨터소프트웨어학 부전공</p>
             </div>
           </div>
 
-          <div class="education-col">
-            <h2 class="section-heading">Certificates</h2>
-            <div class="education-list border-top">
-              <div class="education-item border-bottom">
-                <div class="education-year">2020</div>
-                <h3 class="education-title">UI.UX 디자인 & 웹퍼블리셔 교육 과정 이수</h3>
-              </div>
+          <div class="edu-list-item border-bottom">
+            <div class="edu-type">Certificate</div>
+            <div class="edu-date">2020.02 – 2020.08</div>
+            <div class="edu-info">
+              <h3 class="edu-name">UI/UX 디자인 & 웹퍼블리셔 교육 과정 이수</h3>
             </div>
           </div>
         </div>
@@ -203,7 +203,3 @@
     </section>
   </div>
 </template>
-
-<script setup>
-// 필요한 경우 데이터나 로직 추가
-</script>

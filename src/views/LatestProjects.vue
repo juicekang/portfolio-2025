@@ -26,7 +26,7 @@
           </span>
           <div class="meta">
             <h3>{{ project.title }}</h3>
-            <p class="role">{{ project.role || 'Web Publisher' }}</p>
+            <p class="role">{{ project.period }}</p>
           </div>
         </div>
 

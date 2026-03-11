@@ -47,7 +47,7 @@
               <p class="project-description">{{ project.description }}</p>
 
               <div v-if="project.tags && project.tags.length" class="project-tags">
-                <span v-for="tag in project.tags" :key="tag" class="tag"> #{{ tag }} </span>
+                <span v-for="tag in project.tags" :key="tag" class="tag"> {{ tag }} </span>
               </div>
             </div>
           </div>

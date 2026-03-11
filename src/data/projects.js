@@ -15,7 +15,7 @@ export const projects = [
     period: '2024.01 - 2025.10',
     role: '프론트엔드 퍼블리셔',
     teamSize: '퍼블리셔 10명',
-    tags: ['반응형', '웹접근성/UDL', 'Vue3', 'Sass', '크로스브라우징'],
+    tags: ['Vue3', 'vite', 'Sass', '크로스브라우징', '다국어 지원'],
     overview:
       'Vue3 기반 AI 디지털 교육자료 플랫폼 퍼블리싱, 프론트엔드 개발을 진행하였습니다. SPA 구조 설계 및 학습창의 공통 컴포넌트를 설계하고, 학습 데이터를 시각화하여 사용자 경험을 개선하였습니다. 또한, 웹접근성/UDL(보편적 학습 설계) 준수를 위해 시맨틱 마크업 구조를 설계하였습니다.',
     features: [
@@ -24,7 +24,18 @@ export const projects = [
       '다국어 지원 (한국어, 영어, 중국어, 베트남어, 일본어)',
       '교사, 학생 템플릿 분리 구축',
     ],
-    techStack: ['Vue3', 'CSS3', 'Sass', 'JavaScript', 'Git', 'Figma', 'Charts.js', 'Swiper.js'],
+    techStack: [
+      'Vue3',
+      'vite',
+      'primeVue',
+      'CSS3',
+      'Sass',
+      'JavaScript',
+      'Git',
+      'Figma',
+      'Charts.js',
+      'Swiper.js',
+    ],
     rate: {
       title: '서비스 구축',
       num: '50',
@@ -528,7 +539,7 @@ export const projects = [
     teamSize: '디자이너 1명, 퍼블리셔 2명, 외부 개발',
     tags: ['HTML5', 'jQuery', 'CSS', 'swiper.js', 'Bootstrap'],
     overview:
-      '제약회사 안국약품의 기존 웹사이트를 리뉴얼한 프로젝트입니다. 풀 반응형으로 제작되었으며, 기존의 개발 소스를 이용하여 페이지 디자인을 바꾸는 형식으로 진행되었습니다.',
+      '다중검지 진단솔루션을 개발하는 이지다이아텍의 웹사이트를 구축했습니다.  전체 반응형 웹사이트로 제작되었으며, 메인과 회사 소개를 제외한 서브페이지 모두를 퍼블리싱했습니다. 다국어 페이지를 지원하기 때문에, 언어에 따라 레이아웃이 깨지지 않고 텍스트가 틀어지는 현상이 없도록 꼼꼼하게 체크하며 퍼블리싱을 진행하였습니다. ',
     techStack: ['HTML5', 'jQuery', 'CSS', 'swiper.js', 'Bootstrap'],
     rate: {
       title: '서브 페이지 구축',
@@ -536,11 +547,6 @@ export const projects = [
       desc: '회사 소개, veus, rapid 등 서브 페이지 80% 이상 구축',
     },
     contributions: [
-      {
-        title: '기존 개발 구조 분석 및 유지',
-        description:
-          '기존 홈페이지 소스를 분석하여 개발 구조를 파악하고, 리뉴얼 과정에서 구조적 충돌이나 기능 누락이 발생하지 않도록 주도적으로 검수하고 유지했습니다.',
-      },
       {
         title: '우선순위 기반 퍼블리싱 및 일정 관리',
         description:

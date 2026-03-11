@@ -155,7 +155,8 @@
   }
 }
 
-// --- Skills Section ---
+// SCSS (about.scss) 수정 부분
+
 .skills-section {
   .section-heading {
     @extend .section-heading-style;
@@ -167,38 +168,62 @@
   }
 
   .skill-category {
-    padding: 50px 40px;
+    padding: 60px 40px;
     @include tablet {
       border-right: none !important;
       border-bottom: 1px solid $c-bg-dark;
-      padding: 30px 0;
+      padding: 40px 0;
       border-top: none;
       &:last-child {
         border-bottom: none;
       }
     }
+
     .category-title {
       font-size: 22px;
       font-weight: 700;
       color: $c-text-primary;
-      margin-bottom: 30px;
+      margin-bottom: 35px;
+      letter-spacing: -0.01em;
     }
-    .skill-list {
-      li {
-        font-size: 16px;
-        line-height: 2.2;
-        color: $c-text-secondary;
-        padding-left: 20px;
-        position: relative;
-        font-weight: 500;
-        &::before {
-          content: '';
-          position: absolute;
-          left: 0;
-          top: 12px;
-          width: 8px;
-          height: 1px;
-          background-color: $c-bg-dark;
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    // 기본 스킬 태그 (서브 스킬)
+    .skill-item {
+      display: inline-flex;
+      align-items: center;
+      padding: 10px 20px;
+      font-size: 15px;
+      font-weight: 500;
+      color: $c-text-secondary;
+      background-color: $c-bg-white;
+      border: 1px solid $c-line-weak;
+      transition: all 0.3s ease;
+      cursor: default;
+
+      &:hover {
+        background-color: $c-bg-dark;
+        color: $c-bg-white;
+        border-color: $c-bg-dark;
+        transform: translateY(-3px);
+      }
+
+      // 🌟 강조 스킬 태그 (메인 스킬) 🌟
+      &.core-skill {
+        background-color: $c-bg-dark; // 처음부터 어두운 배경
+        color: $c-bg-white; // 하얀 글씨
+        border-color: $c-bg-dark;
+        font-weight: 700; // 글씨도 더 두껍게
+
+        &:hover {
+          // core-skill은 마우스 오버 시 반대로 밝아지거나 살짝 투명해지는 효과
+          opacity: 0.85;
+          transform: translateY(-3px);
         }
       }
     }
@@ -284,61 +309,85 @@
 
 // --- Education Section ---
 .education-section {
-  .education-grid {
-    @extend .about-grid;
-    border-bottom: 1px solid $c-bg-dark;
-    @include tablet {
-      border-bottom: none;
-    }
+  .section-heading {
+    @extend .section-heading-style;
+    margin-bottom: 40px;
   }
 
-  .education-col {
-    padding: 40px 40px 40px 0;
+  .edu-list-wrap {
+    display: flex;
+    flex-direction: column;
+  }
+
+  // 새로운 한 줄(Row) 레이아웃
+  .edu-list-item {
+    display: grid;
+    grid-template-columns: 160px 180px 1fr; // [구분] | [연도] | [상세내용] 넓이 비율
+    align-items: center; // 세로 중앙 정렬로 단정한 느낌 부여
+    padding: 35px 0;
+    transition: background-color 0.3s ease;
+
+    // 테블릿/모바일 반응형 처리
     @include tablet {
-      border-right: none;
-      padding-right: 0;
-      //border-bottom: 1px solid $c-bg-dark;
+      grid-template-columns: 120px 1fr; // 모바일에서는 구분을 위로 빼거나 2단으로
+      gap: 12px;
+      padding: 30px 0;
+      align-items: flex-start; // 모바일은 텍스트가 길어질 수 있어 위쪽 정렬
     }
-    &:last-child {
-      padding-left: 40px;
-      padding-right: 0;
-      @include tablet {
-        padding-left: 0;
-        //border-bottom: none;
+    @include mobile {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      padding: 25px 0;
+    }
+
+    // 마우스 호버 시 살짝 배경이 바뀌며 읽기 편하게 (선택사항, 불필요시 제거 가능)
+    &:hover {
+      .edu-name {
+        opacity: 0.8;
       }
     }
-    .section-heading {
-      @extend .section-heading-style;
-      margin-bottom: 30px;
+  }
+
+  // 'Education', 'Certificate' 라벨 스타일
+  .edu-type {
+    font-size: 14px;
+    font-weight: 700;
+    color: $c-text-tertiary; // 기존 회색 텍스트 변수 사용
+    text-transform: uppercase; // 대문자로 변경하여 디자인 요소로 활용
+    letter-spacing: 0.05em;
+
+    @include tablet {
+      grid-column: 1 / -1; // 테블릿에선 전체 너비 차지하며 위로 올라감
+      margin-bottom: 4px;
     }
   }
 
-  .education-item,
-  .certificate-item {
-    padding: 20px 0;
-    .education-year,
-    .certificate-year {
-      font-size: 14px;
-      font-weight: 600;
-      color: $c-text-tertiary;
-      margin-bottom: 8px;
-    }
-    .education-title {
-      font-size: 22px;
+  .edu-date {
+    font-size: 16px;
+    font-weight: 500;
+    color: $c-text-secondary;
+  }
+
+  .edu-info {
+    .edu-name {
+      font-size: 20px;
       font-weight: 700;
       color: $c-text-primary;
       margin-bottom: 6px;
+      transition: opacity 0.3s ease;
+
       @include mobile {
         font-size: 18px;
       }
     }
-    .education-major,
-    .certificate-name {
+    .edu-major {
       font-size: 16px;
       color: $c-text-secondary;
-      font-weight: 500;
+      font-weight: 400;
+
       @include mobile {
-        font-size: 14px;
+        font-size: 15px;
       }
     }
   }

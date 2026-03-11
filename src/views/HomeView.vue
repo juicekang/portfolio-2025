@@ -20,7 +20,7 @@
           <div class="grid-col meta-col" :class="{ loaded: isLoaded }">
             <div class="meta-row border-bottom">
               <span class="label">ROLE</span>
-              <span class="value">UI/UX DEVELOPER<br />WEB PUBLISHER</span>
+              <span class="value">UI/UX DEVELOPER</span>
             </div>
             <div class="meta-row border-bottom">
               <span class="label">STATUS</span>
@@ -48,7 +48,7 @@
       <div class="marquee-wrapper border-top border-bottom" :class="{ loaded: isLoaded }">
         <div class="marquee-track">
           <span v-for="n in 4" :key="n" class="marquee-item">
-            HTML5 • CSS3 • JAVASCRIPT • VUE.JS • INTERACTIVE WEB • ACCESSIBILITY •
+            Vue 3 • TypeScript • JAVASCRIPT • INTERACTIVE WEB • ACCESSIBILITY •
           </span>
         </div>
       </div>
@@ -62,10 +62,10 @@
 
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
-import Works from '@/views/Projects.vue' // 경로 확인 필요
+import Works from '@/views/LatestProjects.vue' // 경로 확인 필요
 
 // --- Typewriter Logic ---
-const phrases = ['WEB PUBLISHER', 'UI DEVELOPER', 'CREATIVE CODER', 'PROBLEM SOLVER']
+const phrases = ['UI/UX DEVELOPER', 'CREATIVE CODER', 'PROBLEM SOLVER']
 const currentPhraseIndex = ref(0)
 const displayedText = ref('')
 const isDeleting = ref(false)
