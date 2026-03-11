@@ -20,7 +20,7 @@
           <div class="profile-content">
             <div class="profile-header border-bottom">
               <h2 class="profile-name">강민주</h2>
-              <p class="profile-title">Kang Minju / Web Publisher</p>
+              <p class="profile-title">Kang Minju / UI Developer</p>
             </div>
 
             <div class="profile-info">
@@ -54,8 +54,8 @@
           </div>
           <div class="intro-content">
             <p class="intro-text">
-              웹 접근성과 사용자 경험을 중심으로 UI를 구현하는 Frontend Developer입니다. 5년 이상의
-              웹 퍼블리싱 경험을 바탕으로 시맨틱 마크업, SEO 최적화, 크로스 브라우징을 고려한
+              웹 접근성과 사용자 경험을 중심으로 UI를 구현하는 Frontend UI Developer입니다. 5년
+              이상의 웹 퍼블리싱 경험을 바탕으로 시맨틱 마크업, SEO 최적화, 크로스 브라우징을 고려한
               안정적인 UI를 구현해왔습니다. 특히 웹접근성 품질인증마크 획득 프로젝트에 참여하며 모든
               사용자를 고려한 마크업 구조와 접근성 설계의 중요성을 깊이 이해하게 되었습니다.
             </p>
